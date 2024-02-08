@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-----------Important meta tags----------->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Christian Quiz, Reality Bible Stars">
+    <meta name="description" content="Bible Star TV Show">
+    <meta name="author" content="">
+    <meta property="og:description" content="Bible Star TV Show">
+    <meta property="og:author" content="">
+    <meta property="og:image" content="">
+    <meta property="og:title" content="">
+    <link href="./public/images/bible-stars-logo.png" rel="shortcut icon" type="image/png">
+    <link href="./public/images/bible-stars-logo.png" rel="apple-touch-icon">
+    <link href="./public/images/bible-stars-logo.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="./public/images/bible-stars-logo.png" rel="apple-touch-icon" sizes="114x114">
+
+    <!-----------Title---------->
+    <title>Bible Stars TV Show : More than just a show</title>
+
+    <!------------Favicon------------->
+    <link rel="shortcut icon" href="./public/images/bible-stars-logo.png" type="image/x-icon">
+
+    <!-------Linked stylesheets, fonts, icons and libraries------------>
+    <link rel="stylesheet" href="./css/output.css">
+
+    <!----------Fontawesome icons---------->
+
+    
+    <!--------Google Fonts----------->
+    
+
+    <!--------------Added Styles------------>
+    <style>
+        /** Ensures proper background positioning for carousel slides ***/
+        .mySlides{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /** Background for individual slides **/
+        .slide-1{
+            background-image: url(./assets/home/stock1.jpg);
+        }
+
+        .slide-2{
+            background-image: url(./assets/home/stock2.jpg);
+        }
+
+        .slide-3{
+            background-image: url(./assets/home/stock3.jpg);
+        }
+
+        .slide-4{
+            background-image: url(./assets/home/stock4.jpg);
+        }
+
+        /** Style for scrollbar of latest contents **/
+        #latest-con-slide::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        #latest-con-slide::-webkit-scrollbar-track {
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        
+        #latest-con-slide::-webkit-scrollbar-thumb {
+            background-color: #FCAE1E;
+            border-radius:10px;
+        }
+
+
+        /***** This animation is responsible for the smooth yellow transitions****/ 
+        
+        .yellow-move {
+            animation-name: move;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        @-webkit-keyframes move {
+            0% {width:0px}
+            50% {width: 100%}
+            100% {width:0px}
+        }
+
+        @keyframes move {
+            0% {width:0px}
+            50% {width: 100%}
+            100% {width: 0px}
+        }
+
+        @media (max-width:250px) {
+            #sidebar-main{
+                width: 100%
+            }
+        }
+
+        @media (min-width: 900px) {
+            .day-review:nth-of-type(odd) .color-showcase{
+                border-radius: 0.75rem 0 0 0.75rem !important;
+            }
+
+            .day-review:nth-of-type(even) .color-showcase{
+                border-radius: 0 0.75rem 0.75rem 0 !important;
+            }
+
+            .day-review:nth-of-type(odd) .review-text{
+                border-radius: 0 0.75rem 0.75rem 0 !important;
+            }
+
+            .day-review:nth-of-type(even) .review-text{
+                border-radius: 0.75rem 0 0 0.75rem !important;
+            }
+
+            .day-review .connecting-line{
+                display: none !important;
+            }
+
+            /**  absolute top-[50%] left-0 -translate-x-24 -translate-y-1/2 h-16 w-16 rounded-full bg-slate-900 **/
+            .day-review:nth-of-type(odd) .connecting-circle{
+                right:0;
+                transform: translate(6rem , -50%);
+                background-color: #FCAE1E;
+            }
+
+            .day-review:nth-of-type(even) .connecting-circle{
+                left:0;
+                transform: translate(-6rem , -50%);
+                background-color: #0f1729;
+            }
+
+            /** absolute top-[50%] left-0 -translate-x-8 -translate-y-1/2 w-8 h-1 bg-light-orange **/
+            .day-review:nth-of-type(odd) .support-con-line{
+                right: 0;
+                transform: translate(2rem , 50%);
+                background-color: #0f1729;
+            }
+
+            .day-review:nth-of-type(even) .support-con-line{
+                left: 0;
+                transform: translate(-2rem , -50%);
+                background-color: #FCAE1E;
+            }
+
+            /**absolute bottom-[50%] left-0 -translate-x-16 w-1 h-24 bg-light-orange -z-10**/
+            .day-review:nth-of-type(odd) .support-con-line-2{
+                right:0;
+                transform: translate(4rem);
+                background-color: #0f1729;
+            }
+
+            .day-review:nth-of-type(even) .support-con-line-2{
+                left:0;
+                transform: translate(-4rem);
+                background-color: #FCAE1E;
+            }
+
+            .day-review:first-of-type .connecting-circle , .day-review:first-of-type  .support-con-line, .day-review:first-of-type .support-con-line-2{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="relative bg-white">
+    
+    <!--Navbar is fixed to the top of the webpage-->
+    <nav class="fixed top-0 left-0 w-full flex items-center justify-between bg-slate-900 px-4 py-0 z-40 md:px-[5%]">
+        <!--Logo-->
+        <a href="index.html"><img src="./public/images/bible-stars-logo.png" srcset="./public/images/bible-stars-logo.png" alt="" class="h-20 lazy md:h-24"></a>
+
+        <!-- Text links-->
+        <div class="hidden items-center space-x-6 font-nunito text-white md:flex">
+            <ul class="flex text-base font-bold space-x-5">
+                <li><a href="index.html" class="page-active hover:underline ease-linear">Home</a></li>
+                <li><a href="blog.html" class="hover:underline ease-linear">Blog</a></li>
+                <li><a href="stars.html" class="hover:underline ease-linear">Stars</a></li>
+                <li><a href="catchtheactions.html" class="hover:underline ease-linear">Catch the Actions</a></li>
+                <li><a href="crew.html" class="hover:underline ease-linear">Crew</a></li>
+                <li><a href="viewersprizeplay.html" class="hover:underline ease-linear">Viewers prize play</a></li>
+            </ul>
+        </div>
+
+        <!-- Be a partner button -->
+        <a href="partners.html" class="hidden w-max md:block"><button class="w-36 h-12 bg-light-orange text-white text-base font-bold rounded-lg hover:bg-dark-orange ease-linear duration-200">Be a Partner</button></a>
+
+        <!--Hamburger/Fries menu icon to open hidden navigation for mobile-->
+        <img src="./public/images/fries-menu-icon.svg" alt="" class="h-7 md:hidden" id="fries-menu-icon">
+    </nav>
+    
+    <!--------- Hidden side navbar ----------->
+    <section class="fixed top-0 left-0 w-0 h-[100vh] overflow-hidden bg-[rgba(0,0,0,0.3)] z-50 font-nunito ease-in duration-200 md:hidden" id="sidebar">
+
+        <!--This has the white background for the links-->
+        <div class="h-full w-[250px] bg-white overflow-y-auto overflow-x-hidden" id="sidebar-main">
+
+            <!--Close icon-->
+            <img src="./public/images/close-icon.svg" alt="" class="h-8 ml-auto mt-6 mr-5" id="close-icon">
+
+            <!--Text links and respective icons-->
+            <ul class="flex flex-col space-y-5 py-4 mt-8 mx-5 border-y-[1.5px] border-slate-500 !text-slate-900 text-base font-bold" style="width:calc(100% - 2.5rem)">
+
+                <!--Home Link-->
+                <li><a href="index.html" class="flex items-center space-x-3"><img src="./public/images/home-icon.svg" alt="" class="w-6"> <span>Home</span></a></li>
+
+                <!--Blog Link-->
+                <li><a href="blog.html" class="flex items-center space-x-3"><img src="./public/images/blog-icon.svg" alt="" class="w-6"> <span>Blog</span></a></li>
+
+                <!--Stars Link-->
+                <li><a href="stars.html" class="flex items-center space-x-3"><img src="./public/images/stars-icon.svg" alt="" class="w-6"> <span>Stars</span></a></li>
+
+                <!--Catch The Actions Link-->
+                <li><a href="catchtheactions.html" class="flex items-center space-x-3"><img src="./public/images/catchtheactions-icon.svg" alt="" class="w-6"> <span>Catch The Actions</span></a></li>
+
+                <!--Crew Link-->
+                <li><a href="crew.html" class="flex items-center space-x-3"><img src="./public/images/crew-icon.svg" alt="" class="w-6"> <span>Crew</span></a></li>
+
+                <!--Viewers Prize Play Link-->
+                <li><a href="viewersprizeplay.html" class="flex items-center space-x-3"><img src="./public/images/viewersprizeplay-icon.svg" alt="" class="w-6"> <span>Viewers Prize Play</span></a></li>
+                
+            </ul>
+
+            <!-- Be A Partner Button -->
+            <div class="mt-6 mx-5" style="width: calc(100% - 2.5rem)">
+                <a href="partners.html" class="block w-max mx-auto"><button class="w-36 h-12 bg-light-orange text-white text-base font-bold rounded-lg">Be a Partner</button></a>
+            </div>
+
+        </div>
+    </section>
+    <!---- #0f1729 is equivalent of slate-gray-900 -->
+
+
+
+    <!--------- Header carousel ------------>
+    <header class="relative w-full h-[300px] mt-[80px] overflow-hidden md:h-[480px] md:mt-[96px]" id="slider">
+
+        <!-------These are the individual slides for the carousel ------->
+        <!----- Check the style tag in the head for their background-images incase of change later-->
+        <div class="mySlides slide-1 h-full w-full"></div>
+        <div class="mySlides slide-2 h-full w-full"></div>
+        <div class="mySlides slide-3 h-full w-full"></div>
+        <div class="mySlides slide-4 h-full w-full"></div>
+
+
+        <!-- These are the bottom placed dots for the carousel navigation-->
+        <div class="dots bottom-5 absolute w-full flex items-center justify-center space-x-2 md:space-x-6">
+            <div class="w-max flex items-center space-x-2 p-1 bg-[rgba(0,0,0,0.4)] rounded-full">
+                <div class="dot h-[2px] w-[1.2rem] bg-white rounded-full dot-active duration-200 md:w-[1.5rem]" onclick="currentSlide(1)"></div>
+                <div class="dot h-[2px] w-[1.2rem] bg-white rounded-full duration-200 md:w-[1.5rem]" onclick="currentSlide(2)"></div>
+                <div class="dot h-[2px] w-[1.2rem] bg-white rounded-full duration-200 md:w-[1.5rem]" onclick="currentSlide(3)"></div>
+                <div class="dot h-[2px] w-[1.2rem] bg-white rounded-full duration-200 md:w-[1.5rem]" onclick="currentSlide(4)"></div>
+            </div>
+        </div>
+
+        <!-- These are the slide control icons-->
+        <!-- This icon slide the carousel to the previous one-->
+        <div class="hidden absolute bg-light-orange left-0 top-[50%] -translate-y-1/2 cursor-pointer hover:bg-dark-orange md:block rounded-r-md">
+            <img src="./public/images/white-chevron-left.svg" alt="" class="h-12" onclick="plusSlides(-1)" id="prev-slide">
+        </div>
+
+        <!-- This icon slide the carousel to the next one-->
+        <div class="hidden absolute bg-light-orange right-0 top-[50%] -translate-y-1/2 cursor-pointer hover:bg-dark-orange md:block rounded-l-md">
+            <img src="./public/images/white-chevron-right.svg" alt="" class="h-12" onclick="plusSlides(-1)" id="prev-slide">
+        </div>
+
+        
+    </header>
+
+
+    <!-- Here is information about the Big House-->
+    <section class="w-full flex flex-col space-y-4 bg-white px-8 py-6 md:px-[10%]">
+        <h2 class="text-slate-900 text-4xl font-bold font-nunito md:text-5xl">The Big House</h2>
+        <p class="text-black text-base font-medium font-nunito md:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore libero, vel veniam doloremque cumque fuga enim tempora aspernatur quam voluptates, harum ex, quidem minima unde! Cupiditate nulla eum, sapiente dolores maxime tenetur labore suscipit nemo cum vel delectus corporis! Suscipit rerum eligendi totam rem illum voluptatem iusto eos, ex reiciendis?</p>
+    </section>
+
+
+    <!-- Daily Review section-->
+    <section class="relative w-full before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-slate-900 before:-z-10">
+
+        <main class="relative w-full bg-white flex flex-col space-y-4 px-8 py-3 pb-7 rounded-br-[3rem] z-10 md:px-[10%] md:rounded-br-[10%]">
+            <h2 class="text-slate-900 text-4xl font-bold font-nunito md:text-5xl">Daily Review</h2>
+
+            <!-- Daily reviews segment-->
+            <div class="w-full flex flex-col space-y-7 [&>*:nth-child(even)]:md:flex-row-reverse [&>*:nth-child(even)]:md:ml-auto">
+                <!------------- NOTE!!!! -------->
+                <!----- ADD THE LATEST REVIEW TO THE TOPMOST DIV NOT THE BOTTOM PLEASE -->
+
+                <!-- Individual daily review or Day Review-->
+                <div class="day-review relative w-full rounded-xl md:flex md:h-[120px] md:w-[600px]" style="box-shadow:0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025)">
+
+                    <!--This is the header in the mobile and circle in the desktop to show colors-->
+                    <div class="color-showcase w-full h-[65px] rounded-t-xl md:h-full md:w-[120px]"></div>
+
+                    <!--This is the title of the review-->
+                    <div class="daily-review-title w-full h-[60px] flex items-center justify-center text-white text-xl font-semibold font-nunito md:h-full md:w-[200px]"><p>Day 6</p></div>
+
+                    <!--This is the brief description of the review for the day-->
+                    <!--Not more than 150 characters to avoid overflow problems-->
+                    <div class="review-text w-full h-max bg-white overflow-hidden p-4 rounded-b-xl md:h-full md:p-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum aut vero quo minima impedit, modi quod pariatur, consequatur dignissimos magnam culpa!</div>
+
+                    <!-- This is the connecting line between the reviews for mobile-->
+                    <div class="connecting-line absolute -bottom-6 left-[50%] -translate-x-1/2  translate-y-4 h-10 w-1 -z-10 bg-light-orange"></div>
+
+                    <!-- Circle div for desktop view -->
+                    <div class="connecting-circle absolute top-[50%] h-16 w-16 rounded-full"></div>
+
+                    <!-- Supporting connecting line 1 for desktop view -->
+                    <div class="support-con-line absolute top-[50%] w-8 h-1"></div>
+
+                    <!-- Supporting connecting line 2 for desktop view -->
+                    <div class="support-con-line-2 absolute bottom-[50%] w-1 h-24 -z-10"></div>
+                </div>
+                
+                <!-- Individual daily review or Day Review-->
+                <div class="day-review relative w-full rounded-xl md:flex md:h-[120px] md:w-[600px]" style="box-shadow:0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025)">
+
+                    <!--This is the header in the mobile and circle in the desktop to show colors-->
+                    <div class="color-showcase w-full h-[65px] rounded-t-xl md:h-full md:w-[120px]"></div>
+
+                    <!--This is the title of the review-->
+                    <div class="daily-review-title w-full h-[60px] flex items-center justify-center text-white text-xl font-semibold font-nunito md:h-full md:w-[200px]"><p>Day 5</p></div>
+
+                    <!--This is the brief description of the review for the day-->
+                    <!--Not more than 150 characters to avoid overflow problems-->
+                    <div class="review-text w-full h-max bg-white overflow-hidden p-4 rounded-b-xl md:h-full md:p-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum aut vero quo minima impedit, modi quod pariatur, consequatur dignissimos magnam culpa!</div>
+
+                    <!-- This is the connecting line between the reviews for mobile-->
+                    <div class="connecting-line absolute -bottom-6 left-[50%] -translate-x-1/2  translate-y-4 h-10 w-1 -z-10 bg-light-orange"></div>
+
+                    <!-- Circle div for desktop view -->
+                    <div class="connecting-circle absolute top-[50%] h-16 w-16 rounded-full"></div>
+
+                    <!-- Supporting connecting line 1 for desktop view -->
+                    <div class="support-con-line absolute top-[50%] w-8 h-1"></div>
+
+                    <!-- Supporting connecting line 2 for desktop view -->
+                    <div class="support-con-line-2 absolute bottom-[50%] w-1 h-24 -z-10"></div>
+                </div>
+                
+                <!-- Individual daily review or Day Review-->
+                <div class="day-review relative w-full rounded-xl md:flex md:h-[120px] md:w-[600px]" style="box-shadow:0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025)">
+
+                    <!--This is the header in the mobile and circle in the desktop to show colors-->
+                    <div class="color-showcase w-full h-[65px] rounded-t-xl md:h-full md:w-[120px]"></div>
+
+                    <!--This is the title of the review-->
+                    <div class="daily-review-title w-full h-[60px] flex items-center justify-center text-white text-xl font-semibold font-nunito md:h-full md:w-[200px]"><p>Day 4</p></div>
+
+                    <!--This is the brief description of the review for the day-->
+                    <!--Not more than 150 characters to avoid overflow problems-->
+                    <div class="review-text w-full h-max bg-white overflow-hidden p-4 rounded-b-xl md:h-full md:p-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum aut vero quo minima impedit, modi quod pariatur, consequatur dignissimos magnam culpa!</div>
+
+                    <!-- This is the connecting line between the reviews for mobile-->
+                    <div class="connecting-line absolute -bottom-6 left-[50%] -translate-x-1/2  translate-y-4 h-10 w-1 -z-10 bg-light-orange"></div>
+
+                    <!-- Circle div for desktop view -->
+                    <div class="connecting-circle absolute top-[50%] h-16 w-16 rounded-full"></div>
+
+                    <!-- Supporting connecting line 1 for desktop view -->
+                    <div class="support-con-line absolute top-[50%] w-8 h-1"></div>
+
+                    <!-- Supporting connecting line 2 for desktop view -->
+                    <div class="support-con-line-2 absolute bottom-[50%] w-1 h-24 -z-10"></div>
+                </div>
+
+                <!-- Individual daily review or Day Review-->
+                <div class="day-review relative w-full rounded-xl md:flex md:h-[120px] md:w-[600px]" style="box-shadow:0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025)">
+
+                    <!--This is the header in the mobile and circle in the desktop to show colors-->
+                    <div class="color-showcase w-full h-[65px] rounded-t-xl md:h-full md:w-[120px]"></div>
+
+                    <!--This is the title of the review-->
+                    <div class="daily-review-title w-full h-[60px] flex items-center justify-center text-white text-xl font-semibold font-nunito md:h-full md:w-[200px]"><p>Day 3</p></div>
+
+                    <!--This is the brief description of the review for the day-->
+                    <!--Not more than 150 characters to avoid overflow problems-->
+                    <div class="review-text w-full h-max bg-white overflow-hidden p-4 rounded-b-xl md:h-full md:p-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum aut vero quo minima impedit, modi quod pariatur, consequatur dignissimos magnam culpa!</div>
+
+                    <!-- This is the connecting line between the reviews for mobile-->
+                    <div class="connecting-line absolute -bottom-6 left-[50%] -translate-x-1/2  translate-y-4 h-10 w-1 -z-10 bg-light-orange"></div>
+
+                    <!-- Circle div for desktop view -->
+                    <div class="connecting-circle absolute top-[50%] h-16 w-16 rounded-full"></div>
+
+                    <!-- Supporting connecting line 1 for desktop view -->
+                    <div class="support-con-line absolute top-[50%] w-8 h-1"></div>
+
+                    <!-- Supporting connecting line 2 for desktop view -->
+                    <div class="support-con-line-2 absolute bottom-[50%] w-1 h-24 -z-10"></div>
+                </div>
+
+                <!-- Individual daily review or Day Review-->
+                <div class="day-review relative w-full rounded-xl md:flex md:h-[120px] md:w-[600px]" style="box-shadow:0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025)">
+
+                    <!--This is the header in the mobile and circle in the desktop to show colors-->
+                    <div class="color-showcase w-full h-[65px] rounded-t-xl md:h-full md:w-[120px]"></div>
+
+                    <!--This is the title of the review-->
+                    <div class="daily-review-title w-full h-[60px] flex items-center justify-center text-white text-xl font-semibold font-nunito md:h-full md:w-[200px]"><p>Day 2</p></div>
+
+                    <!--This is the brief description of the review for the day-->
+                    <!--Not more than 150 characters to avoid overflow problems-->
+                    <div class="review-text w-full h-max bg-white overflow-hidden p-4 rounded-b-xl md:h-full md:p-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum aut vero quo minima impedit, modi quod pariatur, consequatur dignissimos magnam culpa!</div>
+
+                    <!-- This is the connecting line between the reviews for mobile-->
+                    <div class="connecting-line absolute -bottom-6 left-[50%] -translate-x-1/2  translate-y-4 h-10 w-1 -z-10 bg-light-orange"></div>
+
+                    <!-- Circle div for desktop view -->
+                    <div class="connecting-circle absolute top-[50%] h-16 w-16 rounded-full"></div>
+
+                    <!-- Supporting connecting line 1 for desktop view -->
+                    <div class="support-con-line absolute top-[50%] w-8 h-1"></div>
+
+                    <!-- Supporting connecting line 2 for desktop view -->
+                    <div class="support-con-line-2 absolute bottom-[50%] w-1 h-24 -z-10"></div>
+                </div>
+
+                <!-- Individual daily review or Day Review-->
+                <div class="day-review relative w-full rounded-xl md:flex md:h-[120px] md:w-[600px]" style="box-shadow:0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025)">
+
+                    <!--This is the header in the mobile and circle in the desktop to show colors-->
+                    <div class="color-showcase w-full h-[65px] rounded-t-xl md:h-full md:w-[120px]"></div>
+
+                    <!--This is the title of the review-->
+                    <div class="daily-review-title w-full h-[60px] flex items-center justify-center text-white text-xl font-semibold font-nunito md:h-full md:w-[200px]"><p>Day 1</p></div>
+
+                    <!--This is the brief description of the review for the day-->
+                    <!--Not more than 150 characters to avoid overflow problems-->
+                    <div class="review-text w-full h-max bg-white overflow-hidden p-4 rounded-b-xl md:h-full md:p-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum aut vero quo minima impedit, modi quod pariatur, consequatur dignissimos magnam culpa!</div>
+
+                    <!-- This is the connecting line between the reviews for mobile-->
+                    <div class="connecting-line absolute -bottom-6 left-[50%] -translate-x-1/2  translate-y-4 h-10 w-1 -z-10 bg-light-orange"></div>
+
+                    <!-- Circle div for desktop view -->
+                    <div class="connecting-circle absolute top-[50%] h-16 w-16 rounded-full"></div>
+
+                    <!-- Supporting connecting line 1 for desktop view -->
+                    <div class="support-con-line absolute top-[50%] w-8 h-1"></div>
+
+                    <!-- Supporting connecting line 2 for desktop view -->
+                    <div class="support-con-line-2 absolute bottom-[50%] w-1 h-24 -z-10"></div>
+                </div>
+
+                <!-- Individual daily review or Day Review-->
+                <div class="day-review relative w-full rounded-xl md:flex md:h-[120px] md:w-[600px]" style="box-shadow:0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025)">
+
+                    <!--This is the header in the mobile and circle in the desktop to show colors-->
+                    <div class="color-showcase w-full h-[65px] rounded-t-xl md:h-full md:w-[120px]"></div>
+
+                    <!--This is the title of the review-->
+                    <div class="daily-review-title w-full h-[60px] flex items-center justify-center text-white text-xl font-semibold font-nunito md:h-full md:w-[200px]"><p>Camping</p></div>
+
+                    <!--This is the brief description of the review for the day-->
+                    <!--Not more than 150 characters to avoid overflow problems-->
+                    <div class="review-text w-full h-max bg-white overflow-hidden p-4 rounded-b-xl md:h-full md:p-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum aut vero quo minima impedit, modi quod pariatur, consequatur dignissimos magnam culpa!</div>
+
+                    <!-- This is the connecting line between the reviews for mobile-->
+                    <div class="connecting-line absolute -bottom-6 left-[50%] -translate-x-1/2  translate-y-4 h-10 w-1 -z-10 bg-light-orange"></div>
+
+                    <!-- Circle div for desktop view -->
+                    <div class="connecting-circle absolute top-[50%] h-16 w-16 rounded-full"></div>
+
+                    <!-- Supporting connecting line 1 for desktop view -->
+                    <div class="support-con-line absolute top-[50%] w-8 h-1"></div>
+
+                    <!-- Supporting connecting line 2 for desktop view -->
+                    <div class="support-con-line-2 absolute bottom-[50%] w-1 h-24 -z-10"></div>
+                </div>
+
+            </div>
+
+            <button class="mx-auto w-36 h-12 bg-light-orange text-white text-base font-bold rounded-lg hover:bg-dark-orange md:w-40 md:h-13 md:text-lg" id="show-more-btn">Show More</button>
+        </main>
+
+        <!-- This div is reponsible for the animation below this section-->
+        <div class="absolute top-0 left-0 w-0 h-full bg-light-orange z-[5] rounded-br-[3rem] translate-y-1 yellow-move md:rounded-br-[10%]"></div>
+    </section>
+
+    <!--Social Media links section-->
+    <section class="w-full bg-slate-900 px-8 py-8 md:px-[10%] md:py-14">
+        <!------ Social media links ------>
+        <main class="w-full flex items-center justify-between rounded-lg bg-[rgba(255,255,255,0.1)] px-4 py-2">
+            <a href="https://www.facebook.com/biblestarstvshow?mibextid=ZbWKwL" target="_blank"><img src="./public/images/yellow-facebook-icon.svg" alt="" class="h-7 md:h-8"></a>
+            <a href="https://instagram.com/biblestarsrealityshow?igshid=OGQ5ZDc2ODk2ZA" target="_blank"><img src="./public/images/yellow-instagram-icon.svg" alt="" class="h-7  md:h-8"></a>
+            <a href="https://youtube.com/@biblestarstvshow?si=3jKBGLKHaG8H5MWz" target="_blank"><img src="./public/images/yellow-youtube-icon.svg" alt="" class="h-7  md:h-8"></a>
+            <a href="https://x.com/Biblestarstv?t=rB3yxWYDfQPK-vWxMPoR5A&s=09" target="_blank"><img src="./public/images/yellow-twitter-icon.svg" alt="" class="h-7  md:h-8"></a>
+            <a href="https://pin.it/2ImWZCJ7v" target="_blank"><img src="./public/images/yellow-pinterest-icon.svg" alt="" class="h-7  md:h-8"></a>
+            <a href="https://www.tiktok.com/@biblestarstv?_t=8ggYPo47wTG&_r=1" target="_blank"><img src="./public/images/yellow-tiktok-icon.svg" alt="" class="h-7  md:h-8"></a>
+
+        </main>
+    </section>
+
+    <!------- Latest Content Section ------->
+    <section class="relative w-full before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-slate-900 before:-z-10">
+
+        <!-- This div is reponsible for the animation above this section-->
+        <div class="absolute top-0 right-0 w-0 h-full bg-light-orange z-[5] rounded-tl-[3rem] -translate-y-1 yellow-move md:rounded-tl-[10%]"></div>
+
+        <main class="relative w-full bg-white flex flex-col space-y-4 px-8 py-5 rounded-tl-[3rem] z-10 md:px-[10%] md:rounded-tl-[10%] md:py-10">
+            <h2 class="text-slate-900 text-4xl font-bold font-nunito md:text-5xl">Latest Contents</h2>
+        
+            <!--Main part that exhibits glassmorphism-->
+            <main class="w-full rounded-xl bg-[#f5f7fa] p-4 md:flex md:space-x-8">
+                <!--The large content div-->
+                <a href="#" class="w-full flex flex-col md:w-3/5">
+                    <img src="./assets/home/stock1.jpg" alt="#" class="rounded-lg md:h-[380px] md:rounded-xl">
+
+                    <!--Its type and title-->
+                    <div class="flex space-x-4 py-2 font-nunito text-slate-900 text-lg font-bold md:text-xl">
+                        <img src="./public/images/blog-icon.svg" alt="" class="inline-block w-6 md:w-8"><h3>Title of Content is Here </h3>
+                    </div>
+                </a>
+
+                <!-- Other contents -->
+                <div class="w-full flex flex-col space-y-4 h-[300px] mt-5 mr-4 overflow-y-auto overflow-x-hidden md:mt-0 md:mr-0 md:w-2/5 md:h-[380px] md:space-y-6" id="latest-con-slide">
+                    <!--Individual content div -->
+                    <a href="#" class="w-full flex space-x-4">
+                        <img src="./assets/home/stock2.jpg" alt="#" class="h-[85px] w-[130px] rounded-md">
+
+                        <!-- Its type and title-->
+                        <div class="w flex flex-col justify-center font-nunito text-slate-900" style="width: calc(100% - 146px)">
+                            <h3 class="text-base font-bold text-ellipsis text-nowrap">Some title is here</h3>
+                            <p class="w-full text-sm text-ellipsis overflow-hidden whitespace-nowrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eos minima vel id error facilis sapiente ad accusamus eum deserunt.</p>
+                        </div>
+                    </a>
+
+                    <!--Individual content div -->
+                    <a href="#" class="w-full flex space-x-4">
+                        <img src="./assets/home/stock3.jpg" alt="#" class="h-[85px] w-[130px] rounded-md">
+
+                        <!-- Its type and title-->
+                        <div class="w flex flex-col justify-center font-nunito text-slate-900" style="width: calc(100% - 146px)">
+                            <h3 class="text-base font-bold text-ellipsis text-nowrap">Some title is here</h3>
+                            <p class="w-full text-sm text-ellipsis overflow-hidden whitespace-nowrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eos minima vel id error facilis sapiente ad accusamus eum deserunt.</p>
+                        </div>
+                    </a>
+
+                    <!--Individual content div -->
+                    <a href="#" class="w-full flex space-x-4">
+                        <img src="./assets/home/stock4.jpg" alt="#" class="h-[85px] w-[130px] rounded-md">
+
+                        <!-- Its type and title-->
+                        <div class="w flex flex-col justify-center font-nunito text-slate-900" style="width: calc(100% - 146px)">
+                            <h3 class="text-base font-bold text-ellipsis text-nowrap">Some title is here</h3>
+                            <p class="w-full text-sm text-ellipsis overflow-hidden whitespace-nowrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eos minima vel id error facilis sapiente ad accusamus eum deserunt.</p>
+                        </div>
+                    </a>
+
+                    <!--Individual content div -->
+                    <a href="#" class="w-full flex space-x-4">
+                        <img src="./assets/home/stock1.jpg" alt="#" class="h-[85px] w-[130px] rounded-md">
+
+                        <!-- Its type and title-->
+                        <div class="w flex flex-col justify-center font-nunito text-slate-900" style="width: calc(100% - 146px)">
+                            <h3 class="text-base font-bold text-ellipsis text-nowrap">Some title is here</h3>
+                            <p class="w-full text-sm text-ellipsis overflow-hidden whitespace-nowrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eos minima vel id error facilis sapiente ad accusamus eum deserunt.</p>
+                        </div>
+                    </a>
+
+                    <!--Individual content div -->
+                    <a href="#" class="w-full flex space-x-4">
+                        <img src="./assets/home/stock2.jpg" alt="#" class="h-[85px] w-[130px] rounded-md">
+
+                        <!-- Its type and title-->
+                        <div class="w flex flex-col justify-center font-nunito text-slate-900" style="width: calc(100% - 146px)">
+                            <h3 class="text-base font-bold text-ellipsis text-nowrap">Some title is here</h3>
+                            <p class="w-full text-sm text-ellipsis overflow-hidden whitespace-nowrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eos minima vel id error facilis sapiente ad accusamus eum deserunt.</p>
+                        </div>
+                    </a>
+                </div>
+            </main>
+        </main>
+    </section>
+
+    <!---------  Footer ---------->
+    <footer class="w-full bg-slate-900 px-8 py-6 pb-28 font-nunito text-base md:px-[5%]">
+
+        <!-- Everything except copyright -->
+        <section class="w-full">
+            <!--- Footer logo---->
+            <a href="index.html"><img src="./public/images/bible-stars-logo.png" srcset="./public/images/bible-stars-logo.png" alt="" class="h-20 lazy md:h-24"></a>
+
+            <!-- Other contents-->
+            <section class="w-full lg:flex">
+                <!---- Contact info ---->
+                <div class="w-full flex flex-col space-y-4 mt-6 smd:flex-row smd:space-y-0 smd:space-x-4 lg:mt-0 lg:w-[500px]">
+                    <!-- Location-->
+                    <div class="w-full flex space-x-4">
+                        <img src="./public/images/location-icon.svg" alt="" class="h-5">
+
+                        <p class="text-white">Suite 8, Dabic Shopping Plaza, Yoruba Rd, 240212, Ilorin, Kwara</p>
+                    </div>
+
+                    <!-- Telephone and email-->
+                    <div class="w-full flex flex-col space-y-3">
+                        <!-- Telephone info -->
+                        <a href="tel:+2347048811294" class="w-full flex space-x-4" target="_blank">
+                            <img src="./public/images/contact-icon.svg" alt="" class="h-5">
+
+                            <p class="text-white underline">+2347048811294</p>
+                        </a>
+
+                        <!-- Email info -->
+                        <a href="mailto:biblestarstv@gmail.com" class="w-full flex space-x-4" target="_blank">
+                            <img src="./public/images/email-icon.svg" alt="" class="h-5">
+
+                            <p class="text-white underline">biblestarstv@gmail.com</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!----  Navigation text and social icon Links ---->
+                <div class="flex flex-col space-y-14 mt-10 smd:flex-row smd:space-y-0 smd:space-x-4 lg:mt-0 lg:overflow-hidden">
+                    <!---- Navigation text links ---->
+                    <div class="w-full grid grid-cols-2 gap-4 text-white">
+                        <a href="index.html" class="w-full md:hover:underline ease-linear">Home</a>
+                        <a href="blog.html" class="w-full md:hover:underline ease-linear">Blog</a>
+                        <a href="stars.html" class="w-full md:hover:underline ease-linear">Meet our stars</a>
+                        <a href="catchtheactions.html" class="w-full md:hover:underline ease-linear">Catch the actions</a>
+                        <a href="crew.html" class="w-full md:hover:underline ease-linear">Meet our crew</a>
+                        <a href="viewersprizeplay.html" class="w-full md:hover:underline ease-linear">Viewers prize play</a>
+                        <a href="partners.html" class="w-full md:hover:underline ease-linear">Be a partner</a>
+                    </div>
+
+                    <!------ Social icon links ------>
+                    <div class="w-full flex flex-wrap items-center justify-center space-x-5 smd:justify-start smd:items-start lg:w-[380px]">
+                        <!-- Facebook icon ---->
+                        <a href="https://www.facebook.com/biblestarstvshow?mibextid=ZbWKwL" target="_blank"><img src="./public/images/white-facebook-icon.svg" alt="#" class="h-7"></a>
+
+                        <!-- Instagram icon ---->
+                        <a href="https://instagram.com/biblestarsrealityshow?igshid=OGQ5ZDc2ODk2ZA" target="_blank"><img src="./public/images/white-instagram-icon.svg" alt="#" class="h-7"></a>
+
+                        <!-- Youtube icon ---->
+                        <a href="https://youtube.com/@biblestarstvshow?si=3jKBGLKHaG8H5MWz" target="_blank"><img src="./public/images/white-youtube-icon.svg" alt="#" class="h-7"></a>
+
+                        <!-- Twitter icon ---->
+                        <a href="https://x.com/Biblestarstv?t=rB3yxWYDfQPK-vWxMPoR5A&s=09" target="_blank"><img src="./public/images/white-twitter-icon.svg" alt="#" class="h-7"></a>
+
+                        <!--Pinterest icon-->
+                        <a href="https://pin.it/2ImWZCJ7v" target="_blank"><img src="./public/images/white-pinterest-icon.svg" alt="#" class="h-7"></a>
+
+                        <!-- Tiktok icon ---->
+                        <a href="https://www.tiktok.com/@biblestarstv?_t=8ggYPo47wTG&_r=1" target="_blank" class="lg:!ml-0"><img src="./public/images/white-tiktok-icon.svg" alt="#" class="h-7"></a>
+                    </div>
+                </div>
+                
+            </section>
+        </section>
+        
+
+        <!-- Copyright -->
+        <div class="w-full flex justify-center text-white text-sm mt-8 lg:mt-16 lg:text-base">
+            <span class="text-center">© Copyright BSTV <script defer="">document.write(new Date().getFullYear())</script>. All rights reserved</span>
+        </div>
+
+    </footer>
+
+    
+    <!--- Fixed whatsapp icon ---->
+    <a href="https://wa.me/2348087863562" class="fixed bottom-8 right-8 flex items-center space-x-3 font-nunito font-medium z-30 md:bottom-12 md:right-[5%]" target="_blank">
+        <!-- Chat with us text-->
+        <div class="chat-with-us relative bg-white rounded-md p-1 text-[0.75rem] text-black after:absolute after:-right-[0.37rem] after:top-[50%] after:-translate-y-1/2 after:bg-white after:w-2 after:h-1 after:rotate-90 md:text-[0.8rem]">Chat With Us</div>
+
+        <!-- Whtsapp logo-->
+        <img src="./public/images/whatsapp-logo.png" alt="" class="h-11 md:h-14">
+    </a>
+
+    <!--General js file-->
+    <script src="./js/main.js"></script>
+
+    <!--Js file for index.html only-->
+    <script src="./js/index.js"></script>
+</body>
