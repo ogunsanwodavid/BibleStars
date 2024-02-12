@@ -66,7 +66,7 @@ else if( e.key === "ArrowRight" ) {
 /******** Function to be completed by backend dev *****/
 
 function submitSignUp() {
-    window.alert("submitted")
+    showModal()
 }
 
 /********** Script that shows contribution amount itself ********/
@@ -333,7 +333,41 @@ function validateSignUp(event) {
 }
 
 
+/************* Script for the Thanks modal starts********/
+const thanksModal = document.getElementById("thanks-modal")
+var desktopWidth = window.matchMedia("(min-width:900px)")
 
+
+function showModal() {
+    if(desktopWidth.matches){
+        //Display thanks Modal for desktop
+        thanksModal.classList.remove("hidden")
+        thanksModal.classList.add("flex")
+    }else{
+        //Display thanks Modal for mobile
+        thanksModal.classList.remove("hidden")
+        thanksModal.classList.add("block")
+    }
+}
+
+ /////This script ensures a smooth responsiveness of the thanks modal
+/////for min-width of 900px and below.
+/////for min-width of 900px, it must be flex so it can be centered
+/////but it can be block for 7rem margin-top
+function thanksModalResp(e) {
+    if(e.matches && thanksModal.classList.contains("block")){
+        thanksModal.classList.remove("block")
+        thanksModal.classList.add("flex")
+    }else{
+        thanksModal.classList.remove("flex")
+        thanksModal.classList.add("block")
+    }
+}
+
+desktopWidth.addListener(thanksModalResp)
+thanksModalResp(desktopWidth)
+
+/************* Script for the Thanks modal ends********/
 
 
 

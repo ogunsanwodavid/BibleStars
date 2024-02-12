@@ -620,6 +620,10 @@ video {
   z-index: 5;
 }
 
+.z-\[100\] {
+  z-index: 100;
+}
+
 .mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -628,6 +632,16 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .mb-14 {
@@ -688,6 +702,18 @@ video {
 
 .mt-\[80px\] {
   margin-top: 80px;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-\[7rem\] {
+  margin-top: 7rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
 }
 
 .block {
@@ -831,6 +857,10 @@ video {
   height: max-content;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .max-h-\[382px\] {
   max-height: 382px;
 }
@@ -890,6 +920,10 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-28 {
+  width: 7rem;
 }
 
 .max-w-\[1400px\] {
@@ -1474,6 +1508,10 @@ video {
   line-height: 1.75rem;
 }
 
+.text-\[0\.9rem\] {
+  font-size: 0.9rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1488,6 +1526,14 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-\[500\] {
+  font-weight: 500;
+}
+
+.font-\[700\] {
+  font-weight: 700;
 }
 
 .uppercase {
@@ -1918,6 +1964,16 @@ input,select{
     margin-right: 0px;
   }
 
+  .md\:mx-6 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .md\:ml-10 {
     margin-left: 2.5rem;
   }
@@ -1944,6 +2000,14 @@ input,select{
 
   .md\:mt-\[96px\] {
     margin-top: 96px;
+  }
+
+  .md\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .md\:mt-7 {
+    margin-top: 1.75rem;
   }
 
   .md\:block {
@@ -2042,6 +2106,10 @@ input,select{
     width: 600px;
   }
 
+  .md\:w-\[45\%\!important\] {
+    width: 45% !important;
+  }
+
   .md\:-translate-x-\[10vw\] {
     --tw-translate-x: -10vw;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2057,6 +2125,10 @@ input,select{
 
   .md\:justify-start {
     justify-content: flex-start;
+  }
+
+  .md\:justify-center {
+    justify-content: center;
   }
 
   .md\:justify-between {
@@ -2191,6 +2263,10 @@ input,select{
     line-height: 1.75rem;
   }
 
+  .md\:leading-\[1\.8\] {
+    line-height: 1.8;
+  }
+
   .md\:text-slate-700 {
     --tw-text-opacity: 1;
     color: rgb(51 65 85 / var(--tw-text-opacity));
@@ -2287,6 +2363,10 @@ input,select{
 
   .lg\:w-full {
     width: 100%;
+  }
+
+  .lg\:w-\[30\%\!important\] {
+    width: 30% !important;
   }
 
   .lg\:min-w-\[690px\] {
