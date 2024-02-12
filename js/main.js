@@ -1,5 +1,5 @@
 //////This script is responsive for images loading lazily throughout the website
-document.addEventListener("DOMContentLoaded", () => {
+/* document.addEventListener("DOMContentLoaded", () => {
     const lazyLoadImages = document.querySelectorAll("img.lazy");
   
     function loadAllImages() {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     else {
       loadAllImages();
     }
-  });
+  }); */
 
 
 /////////This script is responsible for the hidden sidebar navigation

@@ -30,6 +30,30 @@ const crewJSON = [
         "image" : "./assets/crew/crew4.webp",
         "role" : "Director",
         "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
+    },
+
+    //Crew member five details
+    {
+        "name" : "Person Five",
+        "image" : "./assets/crew/crew3.webp",
+        "role" : "Co-host",
+        "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
+    },
+
+    //Crew member six details
+    {
+        "name" : "Person Six",
+        "image" : "./assets/crew/crew2.webp",
+        "role" : "Co-host",
+        "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
+    },
+
+    //Crew member seven details
+    {
+        "name" : "Person Seven",
+        "image" : "./assets/crew/crew1.webp",
+        "role" : "Co-Host",
+        "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
     }
 ]
 

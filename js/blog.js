@@ -17,6 +17,7 @@ const headingBlogDate = document.getElementById("heading-blog-date")
 
 headingBlogContent.href = headingBlogData.href
 headingBlogContent.alt = headingBlogData.alt
+headingBlogImage.src = headingBlogData.image
 headingBlogImage.srcset = headingBlogData.image
 headingBlogTitle.innerHTML = headingBlogData.title
 headingBlogDate.innerHTML = headingBlogData.date  
@@ -122,6 +123,7 @@ const mainBlogDates = document.getElementsByClassName("blog-date")
 for (let i = 0; i < mainBlogContents.length; i++) {
     mainBlogContents[i].href = mainBlogJSON[i].href
     mainBlogContents[i].alt = mainBlogJSON[i].alt
+    mainBlogImages[i].src = mainBlogJSON[i].image
     mainBlogImages[i].srcset = mainBlogJSON[i].image
     mainBlogTitles[i].innerHTML = mainBlogJSON[i].title
     mainBlogDates[i].innerHTML = mainBlogJSON[i].date

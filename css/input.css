@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /***** Pre sets *****/
-button , a{
+button , a , i{
     cursor: pointer;
 }
 
