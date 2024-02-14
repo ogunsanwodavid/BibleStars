@@ -68,6 +68,12 @@ input,select{
     font-weight: 700;
 }
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype'),
+    url('../public/fonts/Montserrat/OFL.txt') format('woff')
+}
+
 /** Style for active webpage **/
 .page-active{
     color: #FCAE1E;

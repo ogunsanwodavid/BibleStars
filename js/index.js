@@ -1,68 +1,39 @@
-/**********Script for the header carousel starts*/
+/************** Script for the swiper js **********/
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
 
-//////This is the JS for the automatic carousels slide change every 5 secs.
-let slideIndex2 = 0;
-showSlides2();
-function showSlides2() {
-let i;
-let slides2 = document.getElementsByClassName("mySlides");
-let dots = document.getElementsByClassName("dot");
-for (i = 0; i < slides2.length; i++) {
-    slides2[i].style.display = "none";
-}
-for (i = 0; i < dots.length; i++) {
-dots[i].className = dots[i].className.replace("dot-active", "");
-}
-slideIndex2++;
-if (slideIndex2 > slides2.length) {slideIndex2 = 1}
-slides2[slideIndex2 - 1].style.display = "flex";
-dots[slideIndex2-1].className += " dot-active";
-}
-setInterval(showSlides2, 5000); // Change image every 5 seconds
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
 
-/*The previous and next controls for the slide carousel*/
-let slideIndex = 1;
-showSlides(slideIndex);
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 
-// Next/previous controls
-function plusSlides(n) {
-showSlides(slideIndex += n);
-}
+    //cube effect
+    /* effect: 'cube',
+    cubeEffect: {
+        shadow: false,
+        shadowOffset : 0,
+        slideShadows: false,
+    }, */
 
-// Thumbnail image controls
-function currentSlide(n) {
-showSlides(slideIndex = n);
-}
+    //swiper speed
+    speed: 500,
 
-//This is the base function for the slide controls
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    autoplay: {
+        delay : 3000,
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace("dot-active", "");
-    }
-    slides[slideIndex-1].style.display = "flex";
-    dots[slideIndex-1].className += " dot-active";
-}
+});
 
-//this controls the carousel with the left and right arrow keys 
-window.addEventListener("keydown", (e) => {
-if( e.key === "ArrowLeft" ) {
-    plusSlides(-1)
+for (let i = 0; i < swiper.pagination.bullets.length; i++) {
+    swiper.pagination.bullets[i].style.borderRadius = "9999px"
 }
-else if( e.key === "ArrowRight" ) {
-    plusSlides(1)
-}
-})
-
-/**********Script for the header carousel ends*/
-
 
 
 /********* Script for the  Daily Review starts*/

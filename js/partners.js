@@ -1,181 +1,141 @@
-/**********Script for the header carousel starts*/
+/************** Script for the swiper js **********/
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
 
-//////This is the JS for the automatic carousels slide change every 5 secs.
-let slideIndex2 = 0;
-showSlides2();
-function showSlides2() {
-let i;
-let slides2 = document.getElementsByClassName("mySlides");
-let dots = document.getElementsByClassName("dot");
-for (i = 0; i < slides2.length; i++) {
-    slides2[i].style.display = "none";
-}
-for (i = 0; i < dots.length; i++) {
-dots[i].className = dots[i].className.replace("dot-active", "");
-}
-slideIndex2++;
-if (slideIndex2 > slides2.length) {slideIndex2 = 1}
-slides2[slideIndex2 - 1].style.display = "flex";
-dots[slideIndex2-1].className += " dot-active";
-}
-setInterval(showSlides2, 5000); // Change image every 5 seconds
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
 
-/*The previous and next controls for the slide carousel*/
-let slideIndex = 1;
-showSlides(slideIndex);
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 
-// Next/previous controls
-function plusSlides(n) {
-showSlides(slideIndex += n);
-}
+    //cube effect
+    effect: 'cube',
+    cubeEffect: {
+        shadow: false,
+        shadowOffset : 0,
+        slideShadows: false,
+    },
 
-// Thumbnail image controls
-function currentSlide(n) {
-showSlides(slideIndex = n);
-}
 
-//This is the base function for the slide controls
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    //swiper speed
+    speed: 1000,
+
+    autoplay: {
+        delay : 3000,
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace("dot-active", "");
-    }
-    slides[slideIndex-1].style.display = "flex";
-    dots[slideIndex-1].className += " dot-active";
-}
-
-//this controls the carousel with the left and right arrow keys 
-window.addEventListener("keydown", (e) => {
-if( e.key === "ArrowLeft" ) {
-    plusSlides(-1)
-}
-else if( e.key === "ArrowRight" ) {
-    plusSlides(1)
-}
-})
-
-
-
-/******** Function to be completed by backend dev *****/
-
-function submitSignUp() {
-    showModal()
-}
+});
 
 /********** Script that shows contribution amount itself ********/
 var contribution = document.getElementById("contribution")
 var amount = document.getElementById("amount")
+var partnershipCategory = document.getElementById("partnership-category")
 
-// This JSON stores the item name and respective price
+// This JSON stores the item name and respective amount as a string
 const contributionJSON = [
-    { value: "item_1", amount: "price_1" },
-    { value: "item_2", amount: "price_2" },
-    { value: "item_3", amount: "price_3" },
-    { value: "item_4", amount: "price_4" },
-    { value: "item_5", amount: "price_5" },
-    { value: "item_6", amount: "price_6" },
-    { value: "item_7", amount: "price_7" },
-    { value: "item_8", amount: "price_8" },
-    { value: "item_9", amount: "price_9" },
-    { value: "item_10", amount: "price_10" },
-    { value: "item_11", amount: "price_11" },
-    { value: "item_12", amount: "price_12" },
-    { value: "item_13", amount: "price_13" },
-    { value: "item_14", amount: "price_14" },
-    { value: "item_15", amount: "price_15" },
-    { value: "item_16", amount: "price_16" },
-    { value: "item_17", amount: "price_17" },
-    { value: "item_18", amount: "price_18" },
-    { value: "item_19", amount: "price_19" },
-    { value: "item_20", amount: "price_20" },
-    { value: "item_21", amount: "price_21" },
-    { value: "item_22", amount: "price_22" },
-    { value: "item_23", amount: "price_23" },
-    { value: "item_24", amount: "price_24" },
-    { value: "item_25", amount: "price_25" },
-    { value: "item_26", amount: "price_26" },
-    { value: "item_27", amount: "price_27" },
-    { value: "item_28", amount: "price_28" },
-    { value: "item_29", amount: "price_29" },
-    { value: "item_30", amount: "price_30" },
-    { value: "item_31", amount: "price_31" },
-    { value: "item_32", amount: "price_32" },
-    { value: "item_33", amount: "price_33" },
-    { value: "item_34", amount: "price_34" },
-    { value: "item_35", amount: "price_35" },
-    { value: "item_36", amount: "price_36" },
-    { value: "item_37", amount: "price_37" },
-    { value: "item_38", amount: "price_38" },
-    { value: "item_39", amount: "price_39" },
-    { value: "item_40", amount: "price_40" },
-    { value: "item_41", amount: "price_41" },
-    { value: "item_42", amount: "price_42" },
-    { value: "item_43", amount: "price_43" },
-    { value: "item_44", amount: "price_44" },
-    { value: "item_45", amount: "price_45" },
-    { value: "item_46", amount: "price_46" },
-    { value: "item_47", amount: "price_47" },
-    { value: "item_48", amount: "price_48" },
-    { value: "item_49", amount: "price_49" },
-    { value: "item_50", amount: "price_50" },
-    { value: "item_51", amount: "price_51" },
-    { value: "item_52", amount: "price_52" },
-    { value: "item_53", amount: "price_53" },
-    { value: "item_54", amount: "price_54" },
-    { value: "item_55", amount: "price_55" },
-    { value: "item_56", amount: "price_56" },
-    { value: "item_57", amount: "price_57" },
-    { value: "item_58", amount: "price_58" },
-    { value: "item_59", amount: "price_59" },
-    { value: "item_60", amount: "price_60" },
-    { value: "item_61", amount: "price_61" },
-    { value: "item_62", amount: "price_62" },
-    { value: "item_63", amount: "price_63" },
-    { value: "item_64", amount: "price_64" },
-    { value: "item_65", amount: "price_65" },
-    { value: "item_66", amount: "price_66" },
-    { value: "item_67", amount: "price_67" },
-    { value: "item_68", amount: "price_68" },
-    { value: "item_69", amount: "price_69" },
-    { value: "item_70", amount: "price_70" },
-    { value: "item_71", amount: "price_71" },
-    { value: "item_72", amount: "price_72" },
-    { value: "item_73", amount: "price_73" },
-    { value: "item_74", amount: "price_74" },
-    { value: "item_75", amount: "price_75" },
-    { value: "item_76", amount: "price_76" },
-    { value: "item_77", amount: "price_77" },
-    { value: "item_78", amount: "price_78" },
-    { value: "item_79", amount: "price_79" },
-    { value: "item_80", amount: "price_80" },
-    { value: "item_81", amount: "price_81" },
-    { value: "item_82", amount: "price_82" },
-    { value: "item_83", amount: "price_83" },
-    { value: "item_84", amount: "price_84" },
-    { value: "item_85", amount: "price_85" },
-    { value: "item_86", amount: "price_86" },
-    { value: "item_87", amount: "price_87" },
-    { value: "item_88", amount: "price_88" },
-    { value: "item_89", amount: "price_89" },
-    { value: "item_90", amount: "price_90" },
-    { value: "item_91", amount: "price_91" },
-    { value: "item_92", amount: "price_92" },
-    { value: "item_93", amount: "price_93" },
-    { value: "item_94", amount: "price_94" },
-    { value: "item_95", amount: "price_95" },
-    { value: "item_96", amount: "price_96" },
-    { value: "item_97", amount: "price_97" },
-    { value: "item_98", amount: "price_98" },
-    { value: "item_99", amount: "price_99" },
-    { value: "item_100", amount: "price_100" }
+    { "value": "SHOW ROOM set-up for THE HIDDEN TREASURE task", "amount": "10,000,000" },
+    { "value": "Space for 12 Stars executive BED CHAMBER set-up", "amount": "5,000,000" },
+    { "value": "Space for SEEDS’ CIRCLE GAME COURT set-up", "amount": "3,000,000" },
+    { "value": "Space for THE ARENA set-up", "amount": "10,000,000" },
+    { "value": "Space for THE ASSEMBLY AREA set-up", "amount": "2,000,000" },
+    { "value": "Space for THE MANDATE CORNER set-up", "amount": "2,000,000" },
+    { "value": "Space for INNER CHAMBER set-up", "amount": "2,000,000" },
+    { "value": "Studio space for TODAY AT THE BIG HOUSE set up", "amount": "5,000,000" },
+    { "value": "Space for THE LORD’S GARDEN set-up", "amount": "3,000,000" },
+    { "value": "LIVING ROOM and extension set-up", "amount": "10,000,000" },
+    { "value": "MULTIPURPOSE AREA set-up", "amount": "5,000,000" },
+    { "value": "VIP space set-up", "amount": "2,000,000" },
+    { "value": "BIG HOUSE KITCHEN set-up", "amount": "5,000,000" },
+    { "value": "Space for THE KING’S BANQUET set-up", "amount": "2,500,000" },
+    { "value": "Provision for logistics (C)", "amount": "1,000,000" },
+    { "value": "Grand prize - A BRANDNEW SALOON CAR", "amount": "30,000,000" },
+    { "value": "Grand cash prize", "amount": "10,000,000" },
+    { "value": "1st runner-up cash prize", "amount": "7,500,000" },
+    { "value": "2nd runner-up cash prize", "amount": "5,000,000" },
+    { "value": "Consolation cash prize for one of the 9 remaining Stars", "amount": "2,000,000" },
+    { "value": "Consolation cash prize for one of the 9 remaining Stars", "amount": "2,000,000" },
+    { "value": "Consolation cash prize for one of the 9 remaining Stars", "amount": "2,000,000" },
+    { "value": "Consolation cash prize for one of the 9 remaining Stars", "amount": "2,000,000" },
+    { "value": "Consolation cash prize for one of the 9 remaining Stars", "amount": "2,000,000" },
+    { "value": "Consolation cash prize for one of the 9 remaining Stars", "amount": "2,000,000" },
+    { "value": "Consolation cash prize for one of the 9 remaining Stars", "amount": "2,000,000" },
+    { "value": "Consolation cash prize for one of the 9 remaining Stars", "amount": "2,000,000" },
+    { "value": "Cash prizes for SEEDS’ CIRCLE GAME", "amount": "5,000,000" },
+    { "value": "Cash prizes for THE ULTIMATE GAME", "amount": "5,000,000" },
+    { "value": "Cash prizes for FAITH ALIVE GAME (Individual category)", "amount": "5,000,000" },
+    { "value": "Cash prizes for FAITH ALIVE GAME (Group category)", "amount": "10,000,000" },
+    { "value": "Two-way ticket for officials and crew", "amount": "5,000,000" },
+    { "value": "Two-way ticket for our Stars and special guests", "amount": "5,000,000" },
+    { "value": "Food items, kitchen utensils, and catering service", "amount": "10,000,000" },
+    { "value": "Non-alcoholic drinks, assorted wine, juice, and water", "amount": "5,000,000" },
+    { "value": "Assorted fruits and nuts", "amount": "2,000,000" },
+    { "value": "Meat and Fish supply", "amount": "5,000,000" },
+    { "value": "Cosmetics and Toiletries", "amount": "2,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for all-inclusive Wall robe for one of the Stars", "amount": "1,000,000" },
+    { "value": "Provision for a ground breaking welcome shower/Opening ceremony", "amount": "5,000,000" },
+    { "value": "Provision for the Honorarium of our lead host", "amount": "20,000,000" },
+    { "value": "Provision for the Honorarium of other hosts on the Show", "amount": "5,000,000" },
+    { "value": "Provision for the Honorarium of Four Angels (A-list gospel celebrities)", "amount": "10,000,000" },
+    { "value": "Provision for the Honorarium of Analysts and Narrator", "amount": "5,000,000" },
+    { "value": "Provision for the Honorarium of our House Papa and Mama", "amount": "5,000,000" },
+    { "value": "Provision for the 1-hour TODAY AT THE BIG HOUSE daily recap transmission on DSTV", "amount": "40,000,000" },
+    { "value": "Touching heaven! Changing Earth program daily transmission on DSTV", "amount": "40,000,000" },
+    { "value": "Catch a glimpse! 15 minutes daily highlight show on DSTV", "amount": "20,000,000" },
+    { "value": "Provision for the creation of the 12 Magnificent Keys of the BIG HOUSE", "amount": "5,000,000" },
+    { "value": "Provision for a nationwide publicity", "amount": "10,000,000" },
+    { "value": "Provision for all the Props needed for different segments of the Show", "amount": "10,000,000" },
+    { "value": "Provision for Pre-Show camping Coaches’ honorarium", "amount": "3,000,000" },
+    { "value": "Provision for Internet facilities and connections", "amount": "2,000,000" },
+    { "value": "Provision for brand new professional cameras", "amount": "21,000,000" },
+    { "value": "Provision for Professional stage and production lights", "amount": "15,000,000" },
+    { "value": "Provision for 2 big LED Screens", "amount": "20,000,000" },
+    { "value": "Provision for Sound equipment/lapel microphones", "amount": "10,000,000" },
+    { "value": "Provision for Solar panels, batteries and installation", "amount": "10,000,000" },
+    { "value": "Provision for post production Gadgets and post production", "amount": "10,000,000" },
+    { "value": "Provision for 14 days pre-show camping", "amount": "5,000,000" },
+    { "value": "Provision for security personnel service", "amount": "2,000,000" },
+    { "value": "Provision for the SHOWROOM set up for the Hidden Treasure Task", "amount": "5,000,000" },
+    { "value": "Provision for the SHOWROOM set up for the Wisdom Task", "amount": "2,000,000" },
+    { "value": "Provision for the SHOWROOM set up for the Melodious Task", "amount": "2,000,000" },
+    { "value": "Provision for the SHOWROOM set up for the Keyword Task", "amount": "2,000,000" },
+    { "value": "Provision for the SHOWROOM set up for the A million candle Task", "amount": "2,000,000" },
+    { "value": "Provision for the SHOWROOM set up for the A step to your breakthrough", "amount": "2,000,000" },
+    { "value": "Provision for the ULTIMATE NUMBERS’ GAME COURT set up", "amount": "3,000,000" },
+    { "value": "Provision for the FAITH ALIVE GAME COURT", "amount": "3,000,000" },
+    { "value": "Provision for the LIGHT UP THE WORLD GAME COURT", "amount": "3,000,000" },
+    { "value": "Provision for one of the 4 days REALM OF GLORY gifts", "amount": "1,000,000" },
+    { "value": "Provision for one of the 4 days REALM OF GLORY gifts", "amount": "1,000,000" },
+    { "value": "Provision for one of the 4 days REALM OF GLORY gifts", "amount": "1,000,000" },
+    { "value": "Provision for the executive wall robe", "amount": "2,000,000" },
+    { "value": "Provision for the TARGETED LINES COMPETITION STAGE set up / prizes to be won", "amount": "2,000,000" },
+    { "value": "Provision for THE TESTAMENT COMPETITION STAGE set up / prizes to be won", "amount": "2,000,000" },
+    { "value": "Provision for THE FUNDAMENTAL COMPETITION STAGE set up / prizes to be won", "amount": "2,000,000" },
+    { "value": "Provision for the AIR CONDITIONS", "amount": "3,000,000" },
+    { "value": "Cash prizes for the Hidden treasure task", "amount": "2,000,000" },
+    { "value": "Cash prizes for the A MILLION CANDLE task", "amount": "2,000,000" },
+    { "value": "Cash prizes for A STEP TO YOUR BREAKTHROUGH", "amount": "2,000,000" },
+    { "value": "Provision for logistics (A)", "amount": "1,000,000" },
+    { "value": "Provision for logistics (B)", "amount": "1,000,000" },
 ];
+
+console.log(contributionJSON.length)
 
 //This add this as the items as options to the contribution selection input
 for (let i = 0; i < contributionJSON.length; i++) {
@@ -186,15 +146,35 @@ for (let i = 0; i < contributionJSON.length; i++) {
 //Presets amount value to first item
 amount.value = `₦${contributionJSON[0].amount.toString()}`
 
-//changes price to respective item selected
+//Presents partnership category to first item
+partnershipCategory.value = checkAmount(amount.value)
+
+//add onchange event listener to contribution
 contribution.addEventListener("change" , ()=> {
+    //changes price to respective item selected
     for (let i = 0; i < contributionJSON.length; i++) {
         if(contribution.value == contributionJSON[i].value){
             amount.value = `₦${contributionJSON[i].amount.toString()}`
         }
     }
+    //change partnership category to respective amount shown
+    partnershipCategory.value = checkAmount(amount.value)
 })
 
+///This function determines the partnership category from a string of amount
+function checkAmount(e) {
+    let parsedAmount = parseFloat(e.replace(/,|₦/g, ''))
+
+    if(parsedAmount <= 5000000){
+        return "1 star partner"
+    }else if(parsedAmount > 5000000 && parsedAmount <= 10000000){
+        return "3 stars partner"
+    }else if(parsedAmount > 10000000 && parsedAmount <= 20000000){
+        return "5 stars partner"
+    }else if(parsedAmount > 20000000){
+        return "7 stars partner"
+    }
+}
 
 const receiptUpload = document.getElementById("receipt-upload")
 const receiptUploadError = document.getElementById("receipt-upload-error")
@@ -338,7 +318,7 @@ const thanksModal = document.getElementById("thanks-modal")
 var desktopWidth = window.matchMedia("(min-width:900px)")
 
 
-function showModal() {
+function showThanksModal() {
     if(desktopWidth.matches){
         //Display thanks Modal for desktop
         thanksModal.classList.remove("hidden")
@@ -350,7 +330,7 @@ function showModal() {
     }
 }
 
- /////This script ensures a smooth responsiveness of the thanks modal
+/////This script ensures a smooth responsiveness of the thanks modal
 /////for min-width of 900px and below.
 /////for min-width of 900px, it must be flex so it can be centered
 /////but it can be block for 7rem margin-top
@@ -370,196 +350,34 @@ thanksModalResp(desktopWidth)
 /************* Script for the Thanks modal ends********/
 
 
+/******** Function to be completed by backend dev *****/
 
-
-
-
-
-
-
-
-
-
-/////////////////////// CODE ARCHIVES:::!!!!!!!!!!!!!!!!!!!!!!!!
-///////////////////// DO NOT UNCOMMENT THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-/******** Script for easy selection of Partners category *************/
-
-
-/******* This JSON array objects only store the different contribution values and amounts for each partners category */
-/////// To add any new contribution to a partners category, simple add a value and amount object for it 
-/**
-const star_7_JSON = [
-    {
-        value: "7 material 1",
-        amount : "7_1"
-    },
-    {
-        value: "7 material 2",
-        amount : "7_2"
-    },
-    {
-        value: "7 material 3",
-        amount : "7_3"
-    },
-    {
-        value: "7 material 4",
-        amount : "7_4"
-    },
-    {
-        value: "7 material 5",
-        amount : "7_5"
-    }
-]
-
-const star_5_JSON = [
-    {
-        value: "5 material 1",
-        amount : "5_1"
-    },
-    {
-        value: "5 material 2",
-        amount : "5_2"
-    },
-    {
-        value: "5 material 3",
-        amount : "5_3"
-    },
-    {
-        value: "5 material 4",
-        amount : "5_4"
-    },
-    {
-        value: "5 material 5",
-        amount : "5_5"
-    }
-]
-
-const star_3_JSON = [
-    {
-        value: "3 material 1",
-        amount : "3_1"
-    },
-    {
-        value: "3 material 2",
-        amount : "3_2"
-    },
-    {
-        value: "3 material 3",
-        amount : "3_3"
-    },
-    {
-        value: "3 material 4",
-        amount : "3_4"
-    },
-    {
-        value: "3 material 5",
-        amount : "3_5"
-    }
-]
-
-const star_1_JSON = [
-    {
-        value: "1 material 1",
-        amount : "1_1"
-    },
-    {
-        value: "1 material 2",
-        amount : "1_2"
-    },
-    {
-        value: "1 material 3",
-        amount : "1_3"
-    },
-    {
-        value: "1 material 4",
-        amount : "1_4"
-    },
-    {
-        value: "1 material 5",
-        amount : "1_5"
-    }
-]
-
-const partnersCategory = document.getElementById("partners-category")
-var contribution = document.getElementById("contribution")
-var amount = document.getElementById("amount")
-
-//Adds 7 star options on window load
-if(partnersCategory.value == "7-stars-partner"){
-    for (let i = 0; i < star_7_JSON.length; i++) {
-        contribution.innerHTML += `<option value="${star_7_JSON[i].value}">${star_7_JSON[i].value}</option>`
-    }
+//signup function
+function submitSignUp() {
+    //show thanks modal on submission
+    showThanksModal()
 }
 
+/******* This script is responsive for the "read more" functions on the headings and their contents */
 
-//This eventlistener listens to a change in the dropdown of partners category
-//and then lists the respective contributions
-partnersCategory.addEventListener("change" , () => {
-    if(partnersCategory.value == "7-stars-partner"){
-        contribution.innerHTML = "";
-        for (let i = 0; i < star_7_JSON.length; i++) {
-            contribution.innerHTML += `<option value="${star_7_JSON[i].value}">${star_7_JSON[i].value}</option>`
-        }
-    }
+const moreHead = document.getElementsByClassName("more-head")
+const moreDots = document.getElementsByClassName("more-dots")
+const moreCon = document.getElementsByClassName("more-con")
 
-    if(partnersCategory.value == "5-stars-partner"){
-        contribution.innerHTML = "";
-        amount.value = `₦${star_5_JSON[0].amount.toString()}`;
-        for (let i = 0; i < star_5_JSON.length; i++) {
-            contribution.innerHTML += `<option value="${star_5_JSON[i].value}">${star_5_JSON[i].value}</option>`
+for (let i = 0; i < moreHead.length; i++) {
+    moreHead[i].addEventListener("click" , ()=> {
+        if(moreHead[i].classList.contains("closed")){
+            moreHead[i].classList.remove("closed", "underline", "text-xl" , "md:text-2xl")
+            moreHead[i].classList.add("opened" , "text-2xl" , "md:text-3xl")
+            moreDots[i].classList.add("hidden")
+            moreCon[i].classList.remove("hidden")
+            moreCon[i].classList.add("block")
+        }else if(moreHead[i].classList.contains("opened")){
+            moreHead[i].classList.remove("opened", "text-2xl" , "md:text-3xl")
+            moreHead[i].classList.add("closed" ,"underline", "text-xl" , "md:text-2xl")
+            moreDots[i].classList.remove("hidden")
+            moreCon[i].classList.remove("block")
+            moreCon[i].classList.add("hidden")
         }
-    }
-    
-    if(partnersCategory.value == "3-stars-partner"){
-        contribution.innerHTML = "";
-        amount.value = `₦${star_3_JSON[0].amount.toString()}`;
-        for (let i = 0; i < star_3_JSON.length; i++) {
-            contribution.innerHTML += `<option value="${star_3_JSON[i].value}">${star_3_JSON[i].value}</option>`
-        }
-    }
-    
-    if(partnersCategory.value == "1-star-partner"){
-        contribution.innerHTML = "";
-        amount.value = `₦${star_1_JSON[0].amount.toString()}`;
-        for (let i = 0; i < star_1_JSON.length; i++) {
-            contribution.innerHTML += `<option value="${star_1_JSON[i].value}">${star_1_JSON[i].value}</option>`
-        }
-    }
-})
-
-
-//////The below script assigns the right amount to each option selected
-////// It is perfectly tuned for this function, so do not touch this code!!!
-for (let i = 0; i < star_7_JSON.length; i++) {
-    if(partnersCategory.value == "7-stars-partner" && contribution.value == star_7_JSON[i].value ){
-        amount.value = `₦${star_7_JSON[i].amount.toString()}`
-    }    
+    })                        
 }
-
-contribution.addEventListener("change" , () => {
-    for (let i = 0; i < star_7_JSON.length; i++) {
-        if(partnersCategory.value == "7-stars-partner" && contribution.value == star_7_JSON[i].value ){
-            amount.value = `₦${star_7_JSON[i].amount.toString()}`
-        }    
-    }
-
-    for (let i = 0; i < star_5_JSON.length; i++) {
-        if(partnersCategory.value == "5-stars-partner" && contribution.value == star_5_JSON[i].value ){
-            amount.value = `₦${star_5_JSON[i].amount.toString()}`
-        }    
-    }
-
-    for (let i = 0; i < star_3_JSON.length; i++) {
-        if(partnersCategory.value == "3-stars-partner" && contribution.value == star_3_JSON[i].value ){
-            amount.value = `₦${star_3_JSON[i].amount.toString()}`
-        }    
-    }
-
-    for (let i = 0; i < star_1_JSON.length; i++) {
-        if(partnersCategory.value == "1-star-partner" && contribution.value == star_1_JSON[i].value ){
-            amount.value = `₦${star_1_JSON[i].amount.toString()}`
-        }    
-    }
-})
-**/

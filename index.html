@@ -30,6 +30,11 @@
 
     
     <!--------Google Fonts----------->
+
+
+    <!---- Swiper js ---->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
 
     <!--------------Added Styles------------>
@@ -42,21 +47,21 @@
         }
 
         /** Background for individual slides **/
-        .slide-1{
-            background-image: url(./assets/home/stock1.jpg);
+        /* .slide-1{
+            background-image: url(./assets/home/home-slide-1.jpg);
         }
 
         .slide-2{
-            background-image: url(./assets/home/stock2.jpg);
+            background-image: url(./assets/home/home-slide-2.jpg);
         }
 
         .slide-3{
-            background-image: url(./assets/home/stock3.jpg);
+            background-image: url(./assets/home/home-slide-3.jpg);
         }
 
         .slide-4{
-            background-image: url(./assets/home/stock4.jpg);
-        }
+            background-image: url(./assets/home/home-slide-4.jpg);
+        } */
 
         /** Style for scrollbar of latest contents **/
         #latest-con-slide::-webkit-scrollbar {
@@ -164,6 +169,19 @@
             .day-review:first-of-type .connecting-circle , .day-review:first-of-type  .support-con-line, .day-review:first-of-type .support-con-line-2{
                 display: none;
             }
+
+            /****** Custom CSS properties for the swiper *****/
+            :root{
+                --swiper-pagination-color: #FCAE1E;
+                --swiper-pagination-bullet-width: 1.5rem;
+                --swiper-pagination-bullet-height: 2px;
+                --swiper-pagination-bullet-vertical-gap: 10px;
+                --swiper-pagination-bullet-inactive-color: #000;
+                --swiper-pagination-bullet-inactive-opacity: 0.4;
+                --swiper-navigation-color: #FCAE1E;
+                --swiper-navigation-size: 36px;
+                --swiper-navigation-sides-offset: 15px;
+            }
         }
     </style>
 </head>
@@ -235,77 +253,69 @@
     </section>
     <!---- #0f1729 is equivalent of slate-gray-900 -->
 
-
-
-    <!--------- Header carousel ------------>
-    <header class="relative w-full h-[300px] mt-[80px] overflow-hidden md:h-[480px] md:mt-[96px]" id="slider">
-
-        <!-------These are the individual slides for the carousel ------->
-        <!----- Check the style tag in the head for their background-images incase of change later-->
-        <div class="mySlides slide-1 h-full w-full"></div>
-        <div class="mySlides slide-2 h-full w-full"></div>
-        <div class="mySlides slide-3 h-full w-full"></div>
-        <div class="mySlides slide-4 h-full w-full"></div>
-
-
-        <!-- These are the bottom placed dots for the carousel navigation-->
-        <div class="dots bottom-5 absolute w-full flex items-center justify-center space-x-2 md:space-x-6">
-            <div class="w-max flex items-center space-x-2 p-1 bg-[rgba(0,0,0,0.4)] rounded-full">
-                <div class="dot h-[2px] w-[1.2rem] bg-white rounded-full dot-active duration-200 md:w-[1.5rem]" onclick="currentSlide(1)"></div>
-                <div class="dot h-[2px] w-[1.2rem] bg-white rounded-full duration-200 md:w-[1.5rem]" onclick="currentSlide(2)"></div>
-                <div class="dot h-[2px] w-[1.2rem] bg-white rounded-full duration-200 md:w-[1.5rem]" onclick="currentSlide(3)"></div>
-                <div class="dot h-[2px] w-[1.2rem] bg-white rounded-full duration-200 md:w-[1.5rem]" onclick="currentSlide(4)"></div>
+    <!--------- Carousel ----------->
+    <div class="swiper bg-slate-900 w-full mt-[80px] overflow-hidden md:mt-[96px]">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide w-full">
+                <img src="./assets/home/home-slide-1.jpg" alt="" class="w-full">
+            </div>
+            <div class="swiper-slide w-full">
+                <img src="./assets/home/home-slide-2.jpg" alt="" class="w-full">
+            </div>
+            <div class="swiper-slide w-full">
+                <img src="./assets/home/home-slide-3.jpg" alt="" class="w-full">
+            </div>
+            <div class="swiper-slide w-full">
+                <img src="./assets/home/home-slide-4.jpg" alt="" class="w-full">
             </div>
         </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination !hidden md:!block"></div>
 
-        <!-- These are the slide control icons-->
-        <!-- This icon slide the carousel to the previous one-->
-        <div class="hidden absolute bg-light-orange left-0 top-[50%] -translate-y-1/2 cursor-pointer hover:bg-dark-orange md:block rounded-r-md">
-            <img src="./public/images/white-chevron-left.svg" alt="" class="h-12" onclick="plusSlides(-1)" id="prev-slide">
-        </div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev !hidden md:!block"></div>
+        <div class="swiper-button-next !hidden  md:!block"></div>
 
-        <!-- This icon slide the carousel to the next one-->
-        <div class="hidden absolute bg-light-orange right-0 top-[50%] -translate-y-1/2 cursor-pointer hover:bg-dark-orange md:block rounded-l-md">
-            <img src="./public/images/white-chevron-right.svg" alt="" class="h-12" onclick="plusSlides(-1)" id="prev-slide">
-        </div>
-
-        
-    </header>
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
 
 
     <!-- Here is information about the Big House-->
-    <section class="w-full flex flex-col space-y-4 bg-white px-4 py-6 md:px-[10%]">
+    <section class="w-full flex flex-col space-y-4 bg-white px-7 py-6 md:px-[10%]">
         <!-- Heading -->
-        <h2 class="text-slate-900 text-4xl font-bold font-nunito md:text-5xl">Welcome Message</h2>
+        <h2 class="text-slate-900 text-3xl font-bold font-nunito md:text-4xl">Welcome Message</h2>
 
         <!-- The main info about the big house -->
         <div class="space-y-2 md:space-y-3">
-            <p class="text-slate-900 text-lg font-raleway font-semibold md:text-xl">This is the Bible Stars! A multi-facetted faith based reality show and entertainment experience! Are you ready for the biggest reality show experience that will inspire, and entertain you like never before? With the EVICTION SHOW wrapped up we are set to bring on the next phase of our journey with action packed surprises, bigger platform and give a big house experience like never done before.
+            <p class="text-slate-900 text-base font-raleway font-semibold md:text-lg">This is the Bible Stars! A multi-facetted faith based reality show and entertainment experience! Are you ready for the biggest reality show experience that will inspire, and entertain you like never before? With the EVICTION SHOW wrapped up we are set to bring on the next phase of our journey with action packed surprises, bigger platform and give a big house experience like never done before.
             </p>
 
             <!----- The Big House Experience -->
             <div class="space-y-1">
-                <h3 class="mt-2 text-slate-900 text-3xl font-nunito font-bold md:mt-5 md:text-4xl">The Big House Experience</h3>
+                <h3 class="mt-2 text-slate-700 text-2xl font-nunito font-bold md:mt-5 md:text-3xl">The Big House Experience</h3>
                 <p class="text-black text-base font-raleway font-medium md:text-lg">Kingdom Royalty and Values, Glamour, Amazing Prizes, Surprise Celebrity Guests, Fiercer Battles, State of Art Masterpieces! THIS IS BIG HOUSE! Brace yourself for 15 thrilling activities in just 30 days, culminating in the crowning of our champion "The Bible Personality of the Year"!</p> 
-                <p class="text-black text-base font-raleway font-medium md:text-lg"><a href="./stars.html" class="inline font-bold underline">MEET OUR STARS</a>, who won the 12 keys to the big house. They have blazed through the EVICTION SHOW, hailing from diverse backgrounds and church denominations across Nigeria. Your favorite stars can brace on in the show with your votes and online presence. 
+                <p class="text-black text-base font-raleway font-medium md:text-lg"><a href="./stars.html" class="inline text-gold font-bold underline">MEET OUR STARS</a>, who won the 12 keys to the big house. They have blazed through the EVICTION SHOW, hailing from diverse backgrounds and church denominations across Nigeria. Your favorite stars can brace on in the show with your votes and online presence. 
                 </p>
             </div>
 
             <!----- Amazing Prices ---->
             <div class="space-y-1 md:space-y-2">
-                <h3 class="mt-2 text-slate-900 text-3xl font-nunito font-bold md:mt-5 md:text-4xl">Amazing Prices</h3>
+                <h3 class="mt-2 text-slate-700 text-2xl font-nunito font-bold md:mt-5 md:text-3xl">Amazing Prices</h3>
                 <p class="text-black text-base font-raleway font-medium md:text-lg">While the winner of the show will drive off with a brand-new car and a whopping 10 million Naira cash prize, the first runner up and second runner up are not left out of winning!</p>
                 <p class="text-black text-base font-raleway font-medium md:text-lg">Also other housemates get win other amazing instant prizes in different segments! On this show everyone is a winner!</p>
-                <p class="text-black text-base font-raleway font-medium md:text-lg">As you follow the gripping journey of our stars, you'll have the chance to join in and win amazing cash prizes of up to 100,000 Naira through our <a href="viewersprizeplay.html" class="inline font-bold underline">VIEWERS PRIZE PLAY</a>.</p>
+                <p class="text-black text-base font-raleway font-medium md:text-lg">As you follow the gripping journey of our stars, you'll have the chance to join in and win amazing cash prizes of up to 100,000 Naira through our <a href="viewersprizeplay.html" class="inline text-gold font-bold underline">VIEWERS PRIZE PLAY</a>.</p>
                 <p class="text-slate-900 text-base font-raleway font-medium md:text-lg"></p>
             </div>
             
             <!----- Operation 100 Partners Campaign ---->
             <div class="space-y-1 md:space-y-2">
-                <h3 class="mt-2 text-slate-900 text-3xl font-nunito font-bold md:mt-5 md:text-4xl">Operation 100 Partners Campaign</h3>
+                <h3 class="mt-2 text-slate-700 text-2xl font-nunito font-bold md:mt-5 md:text-3xl">Operation 100 Partners Campaign</h3>
                 <p class="text-black text-base font-raleway font-medium md:text-lg">We are bringing together a team that is ready to reclaim entertainment and win back our youths who have gone into crime and recapture the instability of Nigeria through good entertainment.</p>
                 <p class="text-black text-base font-raleway font-medium md:text-lg">Regular shows have attracted and kept our youth busy while promoting nothing but nudity, drunkenness and immorality, join us to raise the bar and produce a show with quality entertainment that produces more value and will influence the change of hearts!</p>
-                <p class="text-black text-base font-raleway font-medium md:text-lg">Only 100 slots! <a href="partners.html" class="inline font-bold underline">Click here</a> to join the powerful team today!</p>
+                <p class="text-black text-base font-raleway font-medium md:text-lg">Only 100 slots! <a href="partners.html" class="inline text-gold font-bold underline">Click here</a> to join the powerful team today!</p>
             </div>
         </div>
         
