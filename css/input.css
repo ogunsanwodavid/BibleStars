@@ -15,7 +15,7 @@ input,select{
     outline-width:0;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Open Sans';
     src: url('../public/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype'),
     url('../public/fonts/Open_Sans/OFL.txt') format('woff')
@@ -72,7 +72,7 @@ input,select{
     font-family: 'Montserrat';
     src: url('../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype'),
     url('../public/fonts/Montserrat/OFL.txt') format('woff')
-}
+} */
 
 /** Style for active webpage **/
 .page-active{
