@@ -15,14 +15,7 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
 
-    //cube effect
-    effect: 'cube',
-    cubeEffect: {
-        shadow: false,
-        shadowOffset : 0,
-        slideShadows: false,
-    },
-
+    effect: 'flip',
 
     //swiper speed
     speed: 1000,

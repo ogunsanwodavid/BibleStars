@@ -39,28 +39,35 @@
     <!--------------Added Styles------------>
     <style>     
         /** Ensures proper background positioning for carousel slides ***/
-        .mySlides{
+        .mySlides, .swiper-slide{
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
 
-        /** Background for individual slides **/
-        .slide-1{
-            background-image: url(./assets/home/stock1.jpg);
+        .swiper-2{
+            background-image: url(./assets/partners/partners-slide-2.jpg);
         }
 
-        .slide-2{
-            background-image: url(./assets/home/stock2.jpg);
+        .swiper-3{
+            background-image: url(./assets/partners/partners-slide-4.jpg);
         }
 
-        .slide-3{
-            background-image: url(./assets/home/stock3.jpg);
+        .swiper-4{
+            background-image: url(./assets/partners/partners-slide-5.jpg);
         }
 
-        .slide-4{
-            background-image: url(./assets/home/stock4.jpg);
-        }       
+        .swiper-5{
+            background-image: url(./assets/partners/partners-slide-3.jpg);
+        }      
+
+        /****** Custom CSS properties for the swiper *****/
+        :root{
+            --swiper-pagination-color: #FCAE1E;
+            --swiper-pagination-bullet-vertical-gap: 10px;
+            --swiper-pagination-bullet-inactive-color: #000;
+            --swiper-pagination-bullet-inactive-opacity: 0.4;
+        }
     </style>
 </head>
 
@@ -84,7 +91,7 @@
         </div>
 
         <!-- Partner With Us button -->
-        <a href="partners.html" class="hidden w-max md:block"><button class="w-36 h-12 text-white text-base font-bold rounded-lg bg-dark-orange ease-linear duration-200">Partner With Us</button></a>
+        <a href="partners.html" class="hidden w-max md:block"><button class="w-36 h-12 text-white text-base font-bold font-nunito rounded-lg bg-dark-orange ease-linear duration-200">Partner With Us</button></a>
 
         <!--Hamburger/Fries menu icon to open hidden navigation for mobile-->
         <img src="./public/images/fries-menu-icon.svg" alt="" class="h-7 md:hidden" id="fries-menu-icon">
@@ -133,22 +140,24 @@
 
 
     <!--------- Carousel ----------->
-    <div class="swiper bg-slate-900 w-full h-[300px] mt-[80px] overflow-hidden md:h-[480px] md:mt-[96px]">
+    <div class="swiper bg-slate-900 w-full h-[270px] mt-[80px] overflow-hidden md:h-[480px] md:mt-[96px]">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide h-full w-full">
+            <div class="swiper-slide swiper-1 h-full w-full">
                 <img src="./assets/partners/partners-slide-1.jpg" alt="" class="w-full h-full">
             </div>
-            <div class="swiper-slide h-full w-full">
-                <img src="./assets/home/stock2.jpg" alt="" class="w-full h-full">
+            <div class="swiper-slide swiper-2 h-full w-full">
             </div>
-            <div class="swiper-slide h-full w-full">
-                <img src="./assets/home/stock3.jpg" alt="" class="w-full h-full">
+            <div class="swiper-slide swiper-3 h-full w-full">
+            </div>
+            <div class="swiper-slide swiper-4 h-full w-full">
+            </div>
+            <div class="swiper-slide swiper-5 h-full w-full">
             </div>
         </div>
         <!-- If we need pagination -->
-        <!-- <div class="swiper-pagination"></div> -->
+        <div class="swiper-pagination !hidden md:!block"></div>
 
         <!-- If we need navigation buttons -->
         <!-- <div class="swiper-button-prev"></div>

@@ -40,10 +40,14 @@
     <!--------------Added Styles------------>
     <style>
         /** Ensures proper background positioning for carousel slides ***/
-        .mySlides{
+        .mySlides, .swiper-slide{
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        }
+
+        .swiper-slide:nth-of-type(5){
+            background-image: url(./assets/home/home-slide-5.jpg);
         }
 
         /** Background for individual slides **/
@@ -206,7 +210,7 @@
         </div>
 
         <!-- Partner With Us button -->
-        <a href="partners.html" class="hidden w-max md:block"><button class="w-36 h-12 bg-light-orange text-white text-base font-bold rounded-lg hover:bg-dark-orange ease-linear duration-200">Partner With Us</button></a>
+        <a href="partners.html" class="hidden w-max md:block"><button class="w-36 h-12 bg-light-orange text-white text-base font-nunito font-bold rounded-lg hover:bg-dark-orange ease-linear duration-200">Partner With Us</button></a>
 
         <!--Hamburger/Fries menu icon to open hidden navigation for mobile-->
         <img src="./public/images/fries-menu-icon.svg" alt="" class="h-7 md:hidden" id="fries-menu-icon">
@@ -254,21 +258,23 @@
     <!---- #0f1729 is equivalent of slate-gray-900 -->
 
     <!--------- Carousel ----------->
-    <div class="swiper bg-slate-900 w-full mt-[80px] overflow-hidden md:mt-[96px]">
+    <div class="swiper bg-slate-900 w-full h-[270px] mt-[80px] overflow-hidden md:h-[480px] md:mt-[96px]">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide w-full">
+            <div class="swiper-slide w-full h-full">
                 <img src="./assets/home/home-slide-1.jpg" alt="" class="w-full">
             </div>
-            <div class="swiper-slide w-full">
-                <img src="./assets/home/home-slide-2-2.jpg" alt="" class="w-full">
+            <div class="swiper-slide w-full h-full">
+                <img src="./assets/home/home-slide-2.jpg" alt="" class="w-full h-full">
             </div>
-            <div class="swiper-slide w-full">
-                <img src="./assets/home/home-slide-3-2.jpg" alt="" class="w-full">
+            <div class="swiper-slide w-full h-full">
+                <img src="./assets/home/home-slide-3.jpg" alt="" class="w-full h-full">
             </div>
-            <div class="swiper-slide w-full">
-                <img src="./assets/home/home-slide-4-2.jpg" alt="" class="w-full">
+            <div class="swiper-slide w-full h-full">
+                <img src="./assets/home/home-slide-4.jpg" alt="" class="w-full h-full">
+            </div>
+            <div class="swiper-slide w-full h-full">
             </div>
         </div>
         <!-- If we need pagination -->

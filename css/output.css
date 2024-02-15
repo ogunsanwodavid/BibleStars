@@ -857,6 +857,14 @@ video {
   height: max-content;
 }
 
+.h-\[260px\] {
+  height: 260px;
+}
+
+.h-\[270px\] {
+  height: 270px;
+}
+
 .max-h-\[382px\] {
   max-height: 382px;
 }
@@ -2022,6 +2030,14 @@ input,select{
 
   .md\:h-full {
     height: 100%;
+  }
+
+  .md\:h-\[440px\] {
+    height: 440px;
+  }
+
+  .md\:h-\[500px\] {
+    height: 500px;
   }
 
   .md\:w-1\/2 {
