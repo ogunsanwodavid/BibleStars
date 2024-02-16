@@ -3,7 +3,7 @@ const crewJSON = [
     //Crew member one details
     {
         "name" : "Person One",
-        "image" : "./assets/crew/crew1.webp",
+        "image" : "./assets/crew/crew-1.png",
         "role" : "Lead Host",
         "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
     },
@@ -11,7 +11,7 @@ const crewJSON = [
     //Crew member two details
     {
         "name" : "Person Two",
-        "image" : "./assets/crew/crew2.webp",
+        "image" : "./assets/crew/crew-2.png",
         "role" : "Co-Host",
         "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
     },
@@ -19,7 +19,7 @@ const crewJSON = [
     //Crew member three details
     {
         "name" : "Person Three",
-        "image" : "./assets/crew/crew3.webp",
+        "image" : "./assets/crew/crew-3.png",
         "role" : "Analyst",
         "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
     },
@@ -27,7 +27,7 @@ const crewJSON = [
     //Crew member four details
     {
         "name" : "Person Four",
-        "image" : "./assets/crew/crew4.webp",
+        "image" : "./assets/crew/crew-4.png",
         "role" : "Director",
         "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
     },
@@ -35,7 +35,7 @@ const crewJSON = [
     //Crew member five details
     {
         "name" : "Person Five",
-        "image" : "./assets/crew/crew3.webp",
+        "image" : "./assets/crew/crew-5.png",
         "role" : "Co-host",
         "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
     },
@@ -43,7 +43,7 @@ const crewJSON = [
     //Crew member six details
     {
         "name" : "Person Six",
-        "image" : "./assets/crew/crew2.webp",
+        "image" : "./assets/crew/crew-6.png",
         "role" : "Co-host",
         "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
     },
@@ -51,7 +51,15 @@ const crewJSON = [
     //Crew member seven details
     {
         "name" : "Person Seven",
-        "image" : "./assets/crew/crew1.webp",
+        "image" : "./assets/crew/crew-7.png",
+        "role" : "Co-Host",
+        "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
+    },
+
+    //Crew member eight details
+    {
+        "name" : "Person Eight",
+        "image" : "./assets/crew/crew-8.png",
         "role" : "Co-Host",
         "bio" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum corrupti repellendus aut reprehenderit adipisci, possimus esse laboriosam error provident reiciendis officiis dignissimos labore voluptatum magni quam ipsa voluptate recusandae voluptatibus alias tempora iusto libero."
     }
