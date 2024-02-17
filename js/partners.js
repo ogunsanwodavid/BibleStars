@@ -23,10 +23,88 @@ const swiper = new Swiper('.swiper', {
     }
 });
 
+/************** Script for the Accordion ***************/
+const accordionItems = document.getElementsByClassName("accordion");
+const accordionCtrls = document.getElementsByClassName("accordion-ctrl");
+const accordionTexts = document.getElementsByClassName("accordion-text")
+
+
+//Looping through the accordion controls
+for (let i = 0; i < accordionCtrls.length; i++) {
+    //Click event listener added to the controls
+    accordionCtrls[i].addEventListener('click', () => {
+        //Check if accordion is closed
+        if(accordionTexts[i].classList.contains("closed")){
+            //Other Accordion contents except clicked
+            excludedAccordionTexts = Array.from(accordionTexts).filter(function (element) {
+                return element !== accordionTexts[i]
+            })
+
+            //Other Accordion controls except clicked
+            excludedAccordionCtrls = Array.from(accordionCtrls).filter(function (element) {
+                return element !== accordionCtrls[i]
+            })
+
+            //Change control to minus svg
+            //remove closed class
+            //Show accordion content of clicked
+            accordionCtrls[i].src = "./public/images/icon-minus.svg"
+            accordionTexts[i].classList.remove("closed")
+            accordionTexts[i].classList.add("opened")
+            accordionTexts[i].style.display = "block"
+
+            //For other accordion headings
+            for (let i = 0; i < excludedAccordionTexts.length; i++) {
+                excludedAccordionCtrls[i].src = "./public/images/icon-plus.svg"
+                excludedAccordionTexts[i].classList.remove("opened")
+                excludedAccordionTexts[i].classList.add("closed")
+                excludedAccordionTexts[i].style.display = "none"
+            }
+
+            //Scroll Window into clicked Accordion heading when clicked
+            window.scrollTo(0, accordionCtrls[i].offsetTop - accordionCtrls[i].offsetHeight);
+
+        }
+        //Else, if clicked accordion is opened
+        else{
+            excludedAccordionTexts = Array.from(accordionTexts).filter(function (element) {
+                return element !== accordionTexts[i]
+            })
+
+            excludedAccordionCtrls = Array.from(accordionCtrls).filter(function (element) {
+                return element !== accordionCtrls[i]
+            })
+
+
+            //Change control of clicked accordion to plus
+            //Add closed class to accordion
+            //Close accordion content
+            accordionCtrls[i].src = "./public/images/icon-plus.svg"
+            accordionTexts[i].classList.remove("opened")
+            accordionTexts[i].classList.add("closed")
+            accordionTexts[i].style.display = "none"
+
+            //Other accordion controls should show plus svg
+            for (let i = 0; i < excludedAccordionTexts.length; i++) {
+                excludedAccordionCtrls[i].src = "./public/images/icon-plus.svg"
+            }
+        }
+    })            
+}
+
+
+
 /********** Script that shows contribution amount itself ********/
+const readyToPartner = document.getElementById("ready-to-partner")
+const signUpForm = document.getElementById("sign-up-form")
 var contribution = document.getElementById("contribution")
 var amount = document.getElementById("amount")
 var partnershipCategory = document.getElementById("partnership-category")
+
+/*** Scroll to sign up form  */
+function scrollToSignUp() {
+    readyToPartner.scrollIntoView();
+}
 
 // This JSON stores the item name and respective amount as a string
 const contributionJSON = [
@@ -351,7 +429,7 @@ function submitSignUp() {
 
 /******* This script is responsive for the "read more" functions on the headings and their contents */
 
-const moreHead = document.getElementsByClassName("more-head")
+/* const moreHead = document.getElementsByClassName("more-head")
 const moreDots = document.getElementsByClassName("more-dots")
 const moreCon = document.getElementsByClassName("more-con")
 
@@ -371,4 +449,4 @@ for (let i = 0; i < moreHead.length; i++) {
             moreCon[i].classList.add("hidden")
         }
     })                        
-}
+} */
