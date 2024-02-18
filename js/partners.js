@@ -49,6 +49,7 @@ for (let i = 0; i < accordionCtrls.length; i++) {
             //remove closed class
             //Show accordion content of clicked
             accordionCtrls[i].src = "./public/images/icon-minus.svg"
+            accordionCtrls[i].style.transform = "rotate(180deg)"
             accordionTexts[i].classList.remove("closed")
             accordionTexts[i].classList.add("opened")
             accordionTexts[i].style.display = "block"
@@ -80,6 +81,7 @@ for (let i = 0; i < accordionCtrls.length; i++) {
             //Add closed class to accordion
             //Close accordion content
             accordionCtrls[i].src = "./public/images/icon-plus.svg"
+            accordionCtrls[i].style.transform = "rotate(180deg)"
             accordionTexts[i].classList.remove("opened")
             accordionTexts[i].classList.add("closed")
             accordionTexts[i].style.display = "none"
@@ -426,27 +428,3 @@ function submitSignUp() {
     //show thanks modal on submission
     showThanksModal()
 }
-
-/******* This script is responsive for the "read more" functions on the headings and their contents */
-
-/* const moreHead = document.getElementsByClassName("more-head")
-const moreDots = document.getElementsByClassName("more-dots")
-const moreCon = document.getElementsByClassName("more-con")
-
-for (let i = 0; i < moreHead.length; i++) {
-    moreHead[i].addEventListener("click" , ()=> {
-        if(moreHead[i].classList.contains("closed")){
-            moreHead[i].classList.remove("closed", "underline", "text-xl" , "md:text-2xl")
-            moreHead[i].classList.add("opened" , "text-2xl" , "md:text-3xl")
-            moreDots[i].classList.add("hidden")
-            moreCon[i].classList.remove("hidden")
-            moreCon[i].classList.add("block")
-        }else if(moreHead[i].classList.contains("opened")){
-            moreHead[i].classList.remove("opened", "text-2xl" , "md:text-3xl")
-            moreHead[i].classList.add("closed" ,"underline", "text-xl" , "md:text-2xl")
-            moreDots[i].classList.remove("hidden")
-            moreCon[i].classList.remove("block")
-            moreCon[i].classList.add("hidden")
-        }
-    })                        
-} */
