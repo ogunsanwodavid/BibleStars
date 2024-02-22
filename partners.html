@@ -71,6 +71,7 @@
                 <li><a href="index.html" class="hover:underline ease-linear">Home</a></li>
                 <li><a href="blog.html" class="hover:underline ease-linear">Blog</a></li>
                 <li><a href="stars.html" class="hover:underline ease-linear">Stars</a></li>
+                <li><a href="votenow.html" class="hover:underline ease-linear">Vote Now</a></li>
                 <li><a href="catchtheactions.html" class="hover:underline ease-linear">Catch the Actions</a></li>
                 <li><a href="crew.html" class="hover:underline ease-linear">Crew</a></li>
                 <li><a href="viewersprizeplay.html" class="hover:underline ease-linear">Viewers prize play</a></li>
@@ -104,6 +105,9 @@
 
                 <!--Stars Link-->
                 <li><a href="stars.html" class="flex items-center space-x-3"><img src="./public/images/stars-icon.svg" alt="" class="w-6"> <span>Stars</span></a></li>
+
+                <!--Vote Now Link-->
+                <li><a href="votenow.html" class="flex items-center space-x-3"><img src="./public/images/votenow-icon.svg" alt="" class="w-6"> <span>Vote Now</span></a></li>
 
                 <!--Catch The Actions Link-->
                 <li><a href="catchtheactions.html" class="flex items-center space-x-3"><img src="./public/images/catchtheactions-icon.svg" alt="" class="w-6"> <span>Catch The Actions</span></a></li>
@@ -193,27 +197,18 @@
                     <!--- Client side validation already effected ---->
                     <form class="sign-up-form w-full flex flex-col space-y-3 font-nunito text-base font-medium md:text-lg" id="sign-up-form">
 
-                        <!-- Contribution selection -->
+                        <!-- Donation range -->
                         <div class="w-full">
-                            <label for="contribution" class="">Contribution</label>
-                            <select type="text" name="contribution" class="w-full bg-white font-raleway px-2 h-9 border-2 border-slate-900 rounded-md focus:!bg-white focus-within:!bg-white" required id="contribution">
-                                <!----- The options for this select input are added dynamically from the JSON in partners.js file --->
-                                <!--- Check contributionJSON in partners.js -->
+                            <label for="donation" class="">Donation range</label>
+                            <select type="text" name="contribution" class="w-full bg-white font-raleway px-2 h-9 border-2 border-slate-900 rounded-md focus:!bg-white focus-within:!bg-white" required id="donation">
+                                <option value="one-star-partners">₦500,000 - One Star Partners</option>
+                                <option value="three-stars-partners">₦1,000,000 - Three Stars Partners</option>
+                                <option value="five-stars-partners">₦2,500,000 - Five Stars Partners</option>
+                                <option value="seven-stars-partners">₦5,000,000 - Seven Stars Partners</option>
+                                <option value="others">Others - Strictly partnership </option>
                             </select>
                         </div>
-
-                        <!-- Amount -->
-                        <div class="w-full">
-                            <label for="amount" class="">Amount</label>
-                            <input type="text" name="amount" class="w-full font-raleway bg-white px-2 h-9 border-2 border-slate-900 rounded-md focus:!bg-white focus-within:!bg-white" required disabled id="amount">
-                        </div>
-
-                        <!-- Partnership Category -->
-                        <div class="w-full">
-                            <label for="partnership-category" class="">Partnership Category</label>
-                            <input type="text" name="partnership-category" class="w-full font-raleway bg-white px-2 h-9 border-2 border-slate-900 rounded-md focus:!bg-white focus-within:!bg-white" required disabled id="partnership-category">
-                        </div>
-
+                      
                         <!--Bank Transfer-->
                         <div class="flex flex-col space-y-3 px-4 font-raleway">
                             <h3 class="flex items-center space-x-3"><img src="./public/images/bank-icon.svg" alt="" class="h-4"><span class="text-slate-900 text-lg font-semibold md:text-xl">Bank Transfer</span></h3>
@@ -225,15 +220,6 @@
                                     <p>Bible world International Ministry</p>
                                 </li>
                             </ul>
-                        </div>
-
-                        <!-- Receipt upload -->
-                        <div class="w-full">
-                            <label for="receipt-upload" class="">Payment receipt</label>
-                            <input type="file" name="receipt-upload" class="w-full font-raleway bg-white px-2 h-9 border-2 border-slate-900 rounded-md focus:!bg-white focus-within:!bg-white" accept=".jpg, .jpeg, .png" onchange="validateReceiptUpload(this)" id="receipt-upload">
-
-                            <!-- Error message for receipt upload input-->
-                            <div class="hidden text-[0.8rem] text-error-red" id="receipt-upload-error"></div>
                         </div>
 
                          <!-- Name input -->
@@ -539,6 +525,7 @@
                         <a href="index.html" class="w-full md:hover:underline ease-linear">Home</a>
                         <a href="blog.html" class="w-full md:hover:underline ease-linear">Blog</a>
                         <a href="stars.html" class="w-full md:hover:underline ease-linear">Meet our stars</a>
+                        <a href="votenow.html" class="w-full md:hover:underline ease-linear">Vote now</a>
                         <a href="catchtheactions.html" class="w-full md:hover:underline ease-linear">Catch the actions</a>
                         <a href="crew.html" class="w-full md:hover:underline ease-linear">Meet our crew</a>
                         <a href="viewersprizeplay.html" class="w-full md:hover:underline ease-linear">Viewers prize play</a>

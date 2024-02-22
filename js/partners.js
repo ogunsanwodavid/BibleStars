@@ -1,27 +1,3 @@
-/************** Script for the swiper js **********/
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    //swiper speed
-    speed: 1000,
-
-    autoplay: {
-        delay : 3000,
-    }
-});
 
 /************** Script for the Accordion ***************/
 const accordionItems = document.getElementsByClassName("accordion");
@@ -99,17 +75,202 @@ for (let i = 0; i < accordionCtrls.length; i++) {
 /********** Script that shows contribution amount itself ********/
 const readyToPartner = document.getElementById("ready-to-partner")
 const signUpForm = document.getElementById("sign-up-form")
-var contribution = document.getElementById("contribution")
-var amount = document.getElementById("amount")
-var partnershipCategory = document.getElementById("partnership-category")
 
-/*** Scroll to sign up form  */
-function scrollToSignUp() {
-    readyToPartner.scrollIntoView();
+
+
+const signUpName = document.getElementById("sign-up-name")
+const nameError = document.getElementById("name-error")
+const signUpEmail = document.getElementById('sign-up-email')
+const emailError = document.getElementById('email-error')
+const signUpPhoneNumber = document.getElementById("sign-up-phone-number")
+const phoneNumberError = document.getElementById('phone-number-error')
+
+
+/********* The function below validates the entire sign up form and submits if all conditions are met*/
+function validateSignUp(event) {
+    let k = 4;
+    //Prevent default
+    event.preventDefault()
+
+    //Prevent empty sign up name
+    if(signUpName.value.trim() === ""){
+        nameError.classList.remove("hidden")
+        signUpName.style.borderColor = "hsl(0, 100%, 66%)"
+        signUpName.scrollIntoView()
+        k -= 1;
+    }else{
+        if(!signUpName.classList.contains("hidden")){
+            nameError.classList.add("hidden")
+        };
+        signUpName.style.borderColor = "#0f1729"
+    }
+
+    //Prevent empty email and incorrect email format
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+
+    if(signUpEmail.value.trim() === ""){
+        emailError.classList.remove("hidden")
+        signUpEmail.style.borderColor = "hsl(0, 100%, 66%)"
+        signUpName.scrollIntoView()
+        k -= 1;
+    }else{
+        if(!signUpEmail.classList.contains("hidden")){
+            emailError.classList.add("hidden")
+        };
+        signUpEmail.style.borderColor = "#0f1729"
+    }
+
+    if(!emailPattern.test(signUpEmail.value)){
+        emailError.classList.remove("hidden")
+        signUpEmail.style.borderColor = "hsl(0, 100%, 66%)"
+        signUpName.scrollIntoView()
+        k -= 1;
+    }else{
+        if(!signUpEmail.classList.contains("hidden")){
+            emailError.classList.add("hidden")
+        };
+        signUpEmail.style.borderColor = "#0f1729"
+    }
+
+    //Prevent empty phone number
+    if(signUpPhoneNumber.value.trim() === ""){
+        phoneNumberError.classList.remove("hidden")
+        signUpPhoneNumber.style.borderColor = "hsl(0, 100%, 66%)"
+        signUpName.scrollIntoView()
+        k -= 1;
+    }else{
+        if(!signUpPhoneNumber.classList.contains("hidden")){
+            phoneNumberError.classList.add("hidden")
+        };
+        signUpPhoneNumber.style.borderColor = "#0f1729"
+    }
+
+    //Prevent empty receipt image
+    /* if(receiptUpload.files.length == 0){
+        receiptUploadError.classList.remove("hidden")
+        receiptUploadError.innerHTML = "Attach your receipt please"
+        receiptUpload.style.borderColor = "hsl(0, 100%, 66%)"
+        signUpName.scrollIntoView()
+        k -= 1;
+    }else{
+        if(!receiptUpload.classList.contains("hidden")){
+            receiptUploadError.classList.add("hidden")
+        };
+        receiptUpload.style.borderColor = "#0f1729"
+    } */
+
+    if(k == 4){
+        submitSignUp()
+    }else{
+        return
+    }
 }
 
+
+/************* Script for the Thanks modal starts********/
+const thanksModal = document.getElementById("thanks-modal")
+var desktopWidth = window.matchMedia("(min-width:900px)")
+
+
+function showThanksModal() {
+    if(desktopWidth.matches){
+        //Display thanks Modal for desktop
+        thanksModal.classList.remove("hidden")
+        thanksModal.classList.add("flex")
+    }else{
+        //Display thanks Modal for mobile
+        thanksModal.classList.remove("hidden")
+        thanksModal.classList.add("block")
+    }
+}
+
+/////This script ensures a smooth responsiveness of the thanks modal
+/////for min-width of 900px and below.
+/////for min-width of 900px, it must be flex so it can be centered
+/////but it can be block for 7rem margin-top
+function thanksModalResp(e) {
+    if(e.matches && thanksModal.classList.contains("block")){
+        thanksModal.classList.remove("block")
+        thanksModal.classList.add("flex")
+    }else{
+        thanksModal.classList.remove("flex")
+        thanksModal.classList.add("block")
+    }
+}
+
+desktopWidth.addListener(thanksModalResp)
+thanksModalResp(desktopWidth)
+
+/************* Script for the Thanks modal ends********/
+
+
+/******** Function to be completed by backend dev *****/
+
+//signup function
+function submitSignUp() {
+    //show thanks modal on submission
+    showThanksModal()
+}
+
+
+/************** Script for the swiper js **********/
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    //swiper speed
+    speed: 1000,
+
+    autoplay: {
+        delay : 3000,
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////// THIS CONTAINS DELETED SCRIPTS THAT MIGHT BE HELPFUL LATER ON
+
+
+/* var contribution = document.getElementById("contribution")
+var amount = document.getElementById("amount")
+var partnershipCategory = document.getElementById("partnership-category") */
+
+/*** Scroll to sign up form  */
+/* function scrollToSignUp() {
+    readyToPartner.scrollIntoView();
+} */
+
 // This JSON stores the item name and respective amount as a string
-const contributionJSON = [
+/* const contributionJSON = [
     { "value": "SHOW ROOM set-up for THE HIDDEN TREASURE task", "amount": "10,000,000" },
     { "value": "Space for 12 Stars executive BED CHAMBER set-up", "amount": "5,000,000" },
     { "value": "Space for SEEDS’ CIRCLE GAME COURT set-up", "amount": "3,000,000" },
@@ -206,22 +367,22 @@ const contributionJSON = [
     { "value": "Provision for logistics (B)", "amount": "1,000,000" },
 ];
 
-console.log(contributionJSON.length)
+console.log(contributionJSON.length) */
 
 //This add this as the items as options to the contribution selection input
-for (let i = 0; i < contributionJSON.length; i++) {
+/* for (let i = 0; i < contributionJSON.length; i++) {
     contribution.innerHTML += `<option value="${contributionJSON[i].value}">${contributionJSON[i].value}</option>`
-}
+} */
 
 
 //Presets amount value to first item
-amount.value = `₦${contributionJSON[0].amount.toString()}`
+/* amount.value = `₦${contributionJSON[0].amount.toString()}` */
 
 //Presents partnership category to first item
-partnershipCategory.value = checkAmount(amount.value)
+/* partnershipCategory.value = checkAmount(amount.value) */
 
 //add onchange event listener to contribution
-contribution.addEventListener("change" , ()=> {
+/* contribution.addEventListener("change" , ()=> {
     //changes price to respective item selected
     for (let i = 0; i < contributionJSON.length; i++) {
         if(contribution.value == contributionJSON[i].value){
@@ -230,10 +391,10 @@ contribution.addEventListener("change" , ()=> {
     }
     //change partnership category to respective amount shown
     partnershipCategory.value = checkAmount(amount.value)
-})
+}) */
 
 ///This function determines the partnership category from a string of amount
-function checkAmount(e) {
+/* function checkAmount(e) {
     let parsedAmount = parseFloat(e.replace(/,|₦/g, ''))
 
     if(parsedAmount <= 5000000){
@@ -245,36 +406,18 @@ function checkAmount(e) {
     }else if(parsedAmount > 20000000){
         return "7 stars partner"
     }
-}
+} */
 
-const receiptUpload = document.getElementById("receipt-upload")
-const receiptUploadError = document.getElementById("receipt-upload-error")
+/* const receiptUpload = document.getElementById("receipt-upload")
+const receiptUploadError = document.getElementById("receipt-upload-error") */
 
 ///////// This validates the receipt upload
-function validateReceiptUpload(input) {
-    // Get the selected file
+/* function validateReceiptUpload(input) {
     var file = input.files[0];
     let k = 2
 
-    // Check if file is selected
     if (file) {
-        // Check file extension
-        var fileName = file.name;
-        var fileExtension = fileName.split('.').pop().toLowerCase();
-        /*
-        // Check file size
-        var fileSize = file.size; // in bytes
-        var maxSize = 3 * 1024 * 1024; // 3 MB in bytes*/
 
-        if (fileExtension !== 'jpg' && fileExtension !== 'jpeg' && fileExtension !== 'png') {
-            k -= 1
-            receiptUploadError.innerHTML = "File not an image"
-        }
-        /*
-        if (fileSize > maxSize) {
-            k -= 1
-            receiptUploadError.innerHTML = "File is too big (must not exceed 3MB)";
-        }*/
         if(receiptUpload.files.length === 0){
             k -= 1
             receiptUploadError.innerHTML = "Attach your receipt please"
@@ -292,139 +435,4 @@ function validateReceiptUpload(input) {
         receiptUpload.style.borderColor = "#0f1729"
         receiptUploadError.innerHTML = ""
     }
-}
-
-
-const signUpName = document.getElementById("sign-up-name")
-const nameError = document.getElementById("name-error")
-const signUpEmail = document.getElementById('sign-up-email')
-const emailError = document.getElementById('email-error')
-const signUpPhoneNumber = document.getElementById("sign-up-phone-number")
-const phoneNumberError = document.getElementById('phone-number-error')
-
-
-/********* The function below validates the entire sign up form and submits if all conditions are met*/
-function validateSignUp(event) {
-    let k = 5;
-    //Prevent default
-    event.preventDefault()
-
-    //Prevent empty sign up name
-    if(signUpName.value.trim() === ""){
-        nameError.classList.remove("hidden")
-        signUpName.style.borderColor = "hsl(0, 100%, 66%)"
-        signUpName.scrollIntoView()
-        k -= 1;
-    }else{
-        if(!signUpName.classList.contains("hidden")){
-            nameError.classList.add("hidden")
-        };
-        signUpName.style.borderColor = "#0f1729"
-    }
-
-    //Prevent empty email and incorrect email format
-    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
-
-    if(signUpEmail.value.trim() === ""){
-        emailError.classList.remove("hidden")
-        signUpEmail.style.borderColor = "hsl(0, 100%, 66%)"
-        signUpName.scrollIntoView()
-        k -= 1;
-    }else{
-        if(!signUpEmail.classList.contains("hidden")){
-            emailError.classList.add("hidden")
-        };
-        signUpEmail.style.borderColor = "#0f1729"
-    }
-
-    if(!emailPattern.test(signUpEmail.value)){
-        emailError.classList.remove("hidden")
-        signUpEmail.style.borderColor = "hsl(0, 100%, 66%)"
-        signUpName.scrollIntoView()
-        k -= 1;
-    }else{
-        if(!signUpEmail.classList.contains("hidden")){
-            emailError.classList.add("hidden")
-        };
-        signUpEmail.style.borderColor = "#0f1729"
-    }
-
-    //Prevent empty phone number
-    if(signUpPhoneNumber.value.trim() === ""){
-        phoneNumberError.classList.remove("hidden")
-        signUpPhoneNumber.style.borderColor = "hsl(0, 100%, 66%)"
-        signUpName.scrollIntoView()
-        k -= 1;
-    }else{
-        if(!signUpPhoneNumber.classList.contains("hidden")){
-            phoneNumberError.classList.add("hidden")
-        };
-        signUpPhoneNumber.style.borderColor = "#0f1729"
-    }
-
-    //Prevent empty receipt image
-    if(receiptUpload.files.length == 0){
-        receiptUploadError.classList.remove("hidden")
-        receiptUploadError.innerHTML = "Attach your receipt please"
-        receiptUpload.style.borderColor = "hsl(0, 100%, 66%)"
-        signUpName.scrollIntoView()
-        k -= 1;
-    }else{
-        if(!receiptUpload.classList.contains("hidden")){
-            receiptUploadError.classList.add("hidden")
-        };
-        receiptUpload.style.borderColor = "#0f1729"
-    }
-
-    if(k == 5){
-        submitSignUp()
-    }else{
-        return
-    }
-}
-
-
-/************* Script for the Thanks modal starts********/
-const thanksModal = document.getElementById("thanks-modal")
-var desktopWidth = window.matchMedia("(min-width:900px)")
-
-
-function showThanksModal() {
-    if(desktopWidth.matches){
-        //Display thanks Modal for desktop
-        thanksModal.classList.remove("hidden")
-        thanksModal.classList.add("flex")
-    }else{
-        //Display thanks Modal for mobile
-        thanksModal.classList.remove("hidden")
-        thanksModal.classList.add("block")
-    }
-}
-
-/////This script ensures a smooth responsiveness of the thanks modal
-/////for min-width of 900px and below.
-/////for min-width of 900px, it must be flex so it can be centered
-/////but it can be block for 7rem margin-top
-function thanksModalResp(e) {
-    if(e.matches && thanksModal.classList.contains("block")){
-        thanksModal.classList.remove("block")
-        thanksModal.classList.add("flex")
-    }else{
-        thanksModal.classList.remove("flex")
-        thanksModal.classList.add("block")
-    }
-}
-
-desktopWidth.addListener(thanksModalResp)
-thanksModalResp(desktopWidth)
-
-/************* Script for the Thanks modal ends********/
-
-
-/******** Function to be completed by backend dev *****/
-
-//signup function
-function submitSignUp() {
-    //show thanks modal on submission
-    showThanksModal()
-}
+} */
