@@ -728,10 +728,6 @@ video {
   margin-top: 80px;
 }
 
-.mt-\[86px\] {
-  margin-top: 86px;
-}
-
 .block {
   display: block;
 }
@@ -1195,10 +1191,6 @@ video {
   overflow: hidden;
 }
 
-.overflow-scroll {
-  overflow: scroll;
-}
-
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -1490,10 +1482,6 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.pb-6 {
-  padding-bottom: 1.5rem;
-}
-
 .pb-7 {
   padding-bottom: 1.75rem;
 }
@@ -1626,6 +1614,11 @@ video {
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
+.text-light-orange {
+  --tw-text-opacity: 1;
+  color: rgb(252 174 30 / var(--tw-text-opacity));
+}
+
 .text-magenta {
   --tw-text-opacity: 1;
   color: rgb(255 0 255 / var(--tw-text-opacity));
@@ -1649,11 +1642,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-light-orange {
-  --tw-text-opacity: 1;
-  color: rgb(252 174 30 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2060,10 +2048,6 @@ input,select{
     height: 20rem;
   }
 
-  .xmd\:max-w-full {
-    max-width: 100%;
-  }
-
   .xmd\:max-w-\[650px\] {
     max-width: 650px;
   }
@@ -2091,11 +2075,6 @@ input,select{
   .md\:mx-auto {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .md\:mx-14 {
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
   }
 
   .md\:mb-4 {
@@ -2198,24 +2177,16 @@ input,select{
     height: 120px;
   }
 
+  .md\:h-\[26rem\] {
+    height: 26rem;
+  }
+
   .md\:h-\[380px\] {
     height: 380px;
   }
 
   .md\:h-full {
     height: 100%;
-  }
-
-  .md\:h-\[28rem\] {
-    height: 28rem;
-  }
-
-  .md\:h-\[26rem\] {
-    height: 26rem;
-  }
-
-  .md\:h-\[2rem\] {
-    height: 2rem;
   }
 
   .md\:w-1\/2 {
@@ -2254,20 +2225,20 @@ input,select{
     width: 45% !important;
   }
 
-  .md\:w-\[600px\] {
-    width: 600px;
-  }
-
-  .md\:w-\[90px\] {
-    width: 90px;
+  .md\:w-\[45\%\] {
+    width: 45%;
   }
 
   .md\:w-\[55\%\] {
     width: 55%;
   }
 
-  .md\:w-\[45\%\] {
-    width: 45%;
+  .md\:w-\[600px\] {
+    width: 600px;
+  }
+
+  .md\:w-\[90px\] {
+    width: 90px;
   }
 
   .md\:max-w-full {
@@ -2323,6 +2294,12 @@ input,select{
     margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
   }
 
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
   .md\:overflow-y-auto {
     overflow-y: auto;
   }
@@ -2356,12 +2333,13 @@ input,select{
     padding: 0.75rem;
   }
 
-  .md\:p-10 {
-    padding: 2.5rem;
-  }
-
   .md\:p-8 {
     padding: 2rem;
+  }
+
+  .md\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   .md\:px-4 {
@@ -2402,21 +2380,6 @@ input,select{
   .md\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
-  }
-
-  .md\:px-16 {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-
-  .md\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-
-  .md\:px-14 {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
   }
 
   .md\:text-left {
